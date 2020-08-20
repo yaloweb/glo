@@ -1,0 +1,1161 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+body
+	font-size: 18px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $font1
+	overflow-x: hidden
+	color: $text
+	min-height: 100vh
+	transition: opacity .4s ease
+	&.load-animation
+		.header
+			transform: translateY(40px)
+			opacity: 0
+		.main-window-left
+			&:after
+				transform: scaleY(0)
+		.main-window-left-content
+			transform: translateY(80px)
+			opacity: 0
+		.main-window-right
+			transform: translateY(80px)
+			opacity: 0
+
+b, strong
+	font-weight: bold
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+	font-family: $font2
+	line-height: 1.23
+	margin-bottom: 1rem
+
+h2, .h2
+	font-size: 68px
+
+h3, .h3
+	font-size: 38px
+
+h4, .h4
+	font-size: 24px
+
+section
+	padding: 110px 0
+	position: relative
+
+.container
+	padding: 0 120px
+
+.lines
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: -1
+	.container
+		display: flex
+		justify-content: space-between
+		height: 100%
+	span
+		display: inline-block
+		height: 100%
+		width: 1px
+		background-color: #008BCA
+		opacity: .2
+		&:nth-child(2)
+			transform: translateX(6px)
+		&:nth-child(3)
+			transform: translateX(15px)
+		&:nth-child(4)
+			transform: translateX(22px)
+
+.header
+	padding-top: 45px
+	padding-bottom: 38px
+	transition: transform .6s ease, opacity .6s ease
+	transition-delay: .4s
+
+.header-row
+	display: flex
+	align-items: center
+
+.header-logo
+	margin-right: auto
+
+.logo
+	img
+		width: 263px
+
+.header-menu
+	display: flex
+	margin-right: 73px
+
+.menu-link
+	margin-right: 43px
+	text-transform: uppercase
+	font-size: 14px
+	color: $text
+	transition: $time
+	text-decoration: none !important
+	font-weight: 500
+	&:hover
+		color: $accent
+	&:last-child
+		margin-right: 0
+
+.header-callback
+	.btn
+		padding: 0 24px
+
+.mobile-header
+	display: none
+
+.mob-menu-header
+	display: none
+
+.header-soc
+	display: none
+	.soc-link
+		margin: 0
+
+.soc-link
+	transition: $time
+	text-decoration: none !important
+	opacity: .25
+	margin-right: 48px
+	&:hover
+		opacity: 1
+	img
+		width: 30px
+	&:last-child
+		margin-right: 0
+
+.btn
+	display: inline-block
+	height: 50px
+	line-height: 50px
+	padding: 0 39px
+	border-radius: 25px
+	appearance: none
+	border: none
+	box-shadow: none
+	outline: none !important
+	cursor: pointer
+	text-decoration: none !important
+	color: #fff !important
+	transition: $time
+	background-color: $accent
+	font-size: 14px
+	text-transform: uppercase
+	font-weight: 500
+	position: relative
+	overflow: hidden
+	white-space: nowrap
+	flex-shrink: 0
+	span
+		transition: transform .3s ease
+		display: inline-block
+		position: relative
+		z-index: 1
+	&:hover
+		background-color: #fc5b6d
+		span
+			transform: scale(1.1)
+
+.btn-blue
+	background-color: transparent !important
+	color: #008BCA !important
+	font-size: 18px
+	&:hover,
+	&.active
+		color: #fff !important
+		span
+			transform: scale(1)
+		&:after
+			transform: translate(0)
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		z-index: 0
+		background-color: #E3F6FF
+		z-index: -2
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		z-index: -1
+		background-color: $blue
+		transition: $time
+		transform: translateX(-101%)
+
+.btn-white
+	color: $blue !important
+	background-color: #fff
+	&:hover
+		background-color: #b0e3ff
+
+
+.main-window
+	margin-bottom: 40px
+	overflow: hidden
+
+.main-window-row
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+
+.main-window-left
+	margin-top: 152px
+	width: 100%
+	max-width: 64.5%
+	flex-basis: 64.5%
+	padding-left: 52px
+	position: relative
+	z-index: 1
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 2px
+		height: 100%
+		background-color: $blue
+		transition: transform .7s ease
+		transform-origin: center bottom
+
+.main-window-left-content
+	transition: transform .7s ease, opacity .7s ease
+	.h1
+		font-size: 110px
+		line-height: 1.091
+		letter-spacing: -0.03em
+		margin-bottom: 58px
+	p
+		margin-bottom: 58px
+		max-width: 539px
+
+.main-window-right
+	display: flex
+	justify-content: flex-end
+	width: 100%
+	max-width: 35.5%
+	flex-basis: 35.5%
+	transition: opacity 1.5s ease, transform 1.5s ease
+
+.main-window-nav
+	display: flex
+	margin-bottom: 146px
+	.btn
+		margin-right: 30px
+		&:last-child
+			margin-right: 0
+
+.main-window-pagination
+	display: flex
+	font-size: 14px
+	font-family: $font2
+	span
+		position: relative
+		padding-right: 62px
+		&:last-child
+			padding-right: 0
+			&:after
+				display: none
+		&:after
+			content: ''
+			position: absolute
+			height: 2px
+			border-radius: 1px
+			width: 38px
+			right: 12px
+			top: 50%
+			margin-top: -1px
+			background-color: rgba($dark-blue, .5)
+	a
+		color: rgba($dark-blue, .5)
+		transition: $time
+		text-decoration: none !important
+		&.active
+			color: $dark-blue
+
+.main-slider-wrapper
+	margin-right: -70px
+	position: relative
+
+.main-slider
+	height: 846px
+	width: 846px
+	border: 2px solid rgba(#008BCA, .2)
+	border-radius: 50%
+	overflow: hidden
+	position: relative
+
+.main-slider-item
+	width: 703px
+	height: 703px
+	position: absolute
+	top: 50%
+	left: 50%
+	margin-top: -351.5px
+	margin-left: -351.5px
+	border-radius: 50%
+	overflow: hidden
+	transition: transform .4s ease
+	transform: scale(0)
+	&.active
+		transform: scale(1)
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.play-btn
+	position: absolute
+	width: 120px
+	height: 120px
+	border-radius: 50%
+	background-color: #fff
+	top: 50%
+	left: 50%
+	margin-top: -60px
+	margin-left: -60px
+	background-image: url(../img/icons/play.svg)
+	background-size: 30px
+	background-repeat: no-repeat
+	background-position: top 50% left calc(50% + 4px)
+
+.main-slider-btn
+	border: none
+	cursor: pointer
+	appearance: none
+	border-radius: 50%
+	background-color: $blue
+	background-repeat: no-repeat
+	background-position: center
+	position: absolute
+	box-shadow: none
+	outline: none !important
+	transition: $time
+
+.main-slider-next
+	width: 61px
+	height: 61px
+	bottom: 155px
+	right: 40px
+	background-image: url(../img/icons/arrow-right.svg)
+	background-size: 23px
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-left: -60px
+		margin-top: -60px
+		border: 2px solid rgba($blue, .2)
+		border-radius: 50%
+		width: 120px
+		height: 120px
+
+.main-slider-prev
+	width: 44px
+	height: 44px
+	right: 123px
+	bottom: 88px
+	background-image: url(../img/icons/arrow-left.svg)
+	background-size: 17px
+
+.numbers
+	padding: 40px 0 90px
+
+.numbers-item
+	padding: 0 20px 0 55px
+
+.numbers-header
+	display: flex
+	align-items: flex-start
+	font-size: 20px
+	font-weight: 600
+	margin-bottom: 10px
+	span
+		font-family: $font2
+		margin-right: 10px
+		font-size: 50px
+		line-height: 1.25
+		font-weight: normal
+
+.s-course-slider
+	margin-bottom: 110px
+	overflow: hidden
+
+.owl-carousel .owl-item img
+	max-width: 100%
+	width: auto
+
+.course-slider
+	.owl-stage-outer
+		overflow: visible
+	.owl-stage
+		display: flex
+		align-items: center
+	.owl-item.active
+		.course-slider-bg
+			transform: scale(1)
+			img
+				transform: scale(1)
+		.course-slider-img
+			img
+				transform: scale(1)
+		.course-slider-body
+			transform: scale(1)
+
+.course-slider-item
+	display: flex
+	padding: 120px
+	border-radius: 30px
+	overflow: hidden
+	margin-right: 92px
+	align-items: center
+	position: relative
+	transition: padding .3s ease
+	transition-delay: .5s
+	&:hover
+		.course-slider-bg
+			img
+				transform: scale(1.05)
+		.course-slider-top
+			transform: translateY(0)
+		.course-slider-descr
+			transform: translateY(0)
+			opacity: 1
+
+.course-slider-mob-link
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 3
+
+.course-slider-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: -1
+	transform: scaleY(.85)
+	transition: transform .3s ease
+	transition-delay: .5s
+	border-radius: 30px
+	overflow: hidden
+	img
+		width: 100% !important
+		height: 100%
+		object-fit: cover
+		transition: $time
+		transition-delay: .5s
+		transform: scaleY(1.15)
+
+.course-slider-img
+	margin-right: 40px
+	img
+		width: 290px !important
+		max-width: none !important
+		transition: transform .3s ease
+		transition-delay: .5s
+		transform: scale(.9)
+
+.course-slider-body
+	color: #fff
+	flex-grow: 1
+	transition: transform .3s ease
+	transition-delay: .5s
+	transform: scale(.9)
+	transform-origin: left center
+
+.course-slider-top
+	transform: translateY(calc(50% - 21px))
+	transition: $time
+
+.course-slider-small-title
+	font-size: 12px
+	text-transform: uppercase
+	font-weight: 500
+	margin-bottom: 2px
+
+.course-slider-header
+	display: flex
+	align-items: flex-start
+
+.course-slider-title
+	flex-grow: 1
+	font-family: $font2
+	font-size: 60px
+	line-height: 1.167
+	max-width: 500px
+	margin-right: auto
+	text-transform: uppercase
+
+.course-slider-price
+	font-size: 16px
+	white-space: nowrap
+	span
+		display: block
+		font-family: $font2
+		font-size: 34px
+
+.course-slider-descr
+	margin-top: 48px
+	display: flex
+	align-items: flex-start
+	transition: $time
+	opacity: 0
+	transform: translateY(30px)
+	p
+		margin: 0 auto 0 0
+		max-width: 500px
+
+.owl-nav
+	button
+		border: none
+		cursor: pointer
+		appearance: none
+		border-radius: 50%
+		background-color: $blue !important
+		background-repeat: no-repeat !important
+		background-position: center !important
+		position: absolute
+		box-shadow: none
+		outline: none !important
+		transition: $time
+		top: 50%
+		span
+			display: none
+		&.disabled
+			opacity: 0
+		&.owl-next
+			width: 61px
+			height: 61px
+			bottom: 155px
+			right: -30px
+			top: 50%
+			margin-top: -30px
+			background-image: url(../img/icons/arrow-right.svg) !important
+			background-size: 23px !important
+			&:after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				margin-left: -60px
+				margin-top: -60px
+				border: 2px solid rgba($blue, .2)
+				border-radius: 50%
+				width: 120px
+				height: 120px
+		&.owl-prev
+			width: 44px
+			height: 44px
+			right: -22px
+			margin-top: 90px
+			bottom: 88px
+			background-image: url(../img/icons/arrow-left.svg) !important
+			background-size: 17px
+
+.section-blue
+	background-color: #E3F6FF
+	.lines
+		z-index: 0
+	.container
+		position: relative
+		z-index: 1
+	.btn
+		&:before
+			background-color: #fff
+
+.section-title
+	margin-bottom: 70px
+	max-width: 1060px
+	span
+		display: block
+		font-size: 14px
+		text-transform: uppercase
+		margin-bottom: 17px
+		color: $blue
+		font-weight: 500
+	.h2
+		margin: 0
+
+.nav
+	display: flex
+	margin-bottom: 50px
+	.btn
+		margin-right: 30px
+		&:last-child
+			margin-right: 0
+
+.course
+	height: calc(100% - 30px)
+	margin-bottom: 30px
+	border-radius: 30px
+	overflow: hidden
+	background-color: #fff
+	display: flex
+	flex-direction: column
+	&:hover
+		.course-header
+			img
+				transform: scale(1.2)
+
+.course-header
+	height: 223px
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	position: relative
+	padding: 50px
+	overflow: hidden
+	img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		transition: transform .7s ease
+		z-index: 0
+
+.stick
+	display: inline-block
+	height: 34px
+	line-height: 34px
+	padding: 0 15px
+	border-radius: 17px
+	background-color: #E3F6FF
+	font-size: 14px
+	text-transform: uppercase
+	color: $blue
+	font-weight: 500
+	margin: 0 10px 10px 0
+	position: relative
+	z-index: 1
+
+.course-body
+	padding: 40px 50px 50px
+	display: flex
+	flex-direction: column
+	flex-grow: 1
+
+.course-title
+	margin-bottom: 35px
+	span
+		font-size: 12px
+		margin-bottom: 8px
+		font-weight: 500
+		text-transform: uppercase
+	.h3
+		margin: 0
+
+.course-descr
+	flex-grow: 1
+	max-width: 460px
+	margin-bottom: 8px
+
+.course-footer
+	display: flex
+	align-items: center
+
+.course-price
+	padding-right: 20px
+	flex-grow: 1
+	font-weight: 500
+
+.course-btn
+	display: flex
+
+.s-facts
+	padding-bottom: 55px
+
+.facts
+	padding-top: 23px
+
+.fact
+	margin-bottom: 43px
+	&:last-child
+		margin-bottom: 0
+	&:nth-child(even)
+		> .row
+			.fact-text
+				padding-left: 90px
+	&:nth-child(odd)
+		> .row
+			flex-direction: row-reverse
+		.fact-text
+			padding-right: 90px
+	&.full-width
+		.fact-text
+			padding-left: 0
+			padding-right: 0
+.fact-img
+	margin-bottom: 60px
+	img
+		width: 100%
+		border-radius: 30px
+
+.fact-text
+	.h3
+		margin-bottom: 50px
+		max-width: 704px
+	p
+		margin-bottom: 60px
+		max-width: 612px
+
+.s-skills
+	padding-top: 55px
+	.section-title
+		max-width: 1060px
+
+.skill-tabs-header
+	position: relative
+	margin-bottom: 60px
+	border-radius: 30px
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 0
+		background: linear-gradient(360deg, rgba(41, 63, 110, 0) 42.59%, rgba(41, 63, 110, 0.65) 93.87%)
+
+
+.skill-tabs-nav
+	position: absolute
+	top: 50px
+	left: 50px
+	right: 50px
+	z-index: 1
+	border-bottom: 2px solid rgba(#fff, .3)
+	display: flex
+
+.skill-tabs-border
+	position: absolute
+	bottom: -2px
+	left: 0
+	height: 2px
+	background-color: #fff
+	transition: $time
+
+.skill-tabs-link
+	padding-bottom: 30px
+	color: #fff !important
+	opacity: .7
+	margin-right: 48px
+	text-decoration: none !important
+	transition: opacity .3s ease
+	&:last-child
+		margin-right: 0
+	&.active
+		opacity: 1
+		font-weight: bold
+
+.skill-tabs-img
+	height: 620px
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	display: none
+
+.skill-tabs-body-item
+	transition: transform .3s ease, opacity .3s ease
+	transform: translateX(20px)
+	display: none
+	opacity: 0
+	&.active
+		transform: translateX(0)
+		opacity: 1
+
+.article
+	position: relative
+	height: calc(100% - 30px)
+	padding: 30px
+	margin-bottom: 30px
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	&:hover
+		.article-bg
+			img
+				transform: scale(1.1)
+		.article-content
+			.h4, p
+				transform: translateY(0)
+				opacity: 1
+.article-dark
+	color: #fff
+	.article-bg
+		&:after
+			display: none
+	.article-views
+		&:after
+			background-image: url(../img/icons/eye-white.svg)
+
+.article-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 0
+	border-radius: 30px
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(179.9deg, rgba(255, 255, 255, 0) -21.15%, rgba(255, 255, 255, 0.94) 60.05%)
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		transition: $time
+		border-radius: 31px
+
+.article-content
+	position: relative
+	z-index: 1
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	justify-content: flex-end
+	padding-top: 146px
+	margin-top: auto
+	.h4
+		max-width: 523px
+		margin-bottom: 10px
+		transition: $time
+		transform: translateY(78px)
+	p
+		margin: 0 0 20px
+		height: 58px
+		overflow: hidden
+		transition: $time
+		transform: translateY(78px)
+		opacity: 0
+
+.article-footer
+	margin-top: auto
+	display: flex
+	align-items: center
+	justify-content: space-between
+	width: 100%
+	font-size: 14px
+
+.article-views
+	position: relative
+	padding-right: 20px
+	text-align: right
+	&:after
+		content: ''
+		position: absolute
+		width: 15px
+		height: 11px
+		background-image: url(../img/icons/eye.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		right: 0
+		top: 7px
+
+.article-link
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 2
+
+.check-all
+	margin-top: 20px
+	text-align: right
+
+.accordion
+	margin-right: 122px
+
+.accordion-item
+	border-bottom: 1px solid rgba($blue, .2)
+
+.accordion-title
+	padding: 30px 55px 30px 0
+	font-size: 24px
+	position: relative
+	&.active
+		span
+			background-color: $blue
+			border-color: $blue
+			&:before,
+			&:after
+				background-color: #fff
+				opacity: 1
+				transform: rotate(135deg)
+	span
+		position: absolute
+		right: 0
+		top: 50%
+		margin-top: -20px
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		border: 2px solid rgba($blue, .4)
+		cursor: pointer
+		transition: $time
+		&:before
+			content: ''
+			width: 18px
+			height: 2px
+			position: absolute
+			top: 50%
+			margin-top: -1px
+			left: 50%
+			margin-left: -9px
+			background-color: $blue
+			opacity: .4
+			transition: $time
+		&:after
+			content: ''
+			position: absolute
+			width: 2px
+			height: 18px
+			top: 50%
+			left: 50%
+			margin-left: -1px
+			margin-top: -9px
+			background-color: $blue
+			opacity: .4
+			transition: $time
+
+.accordion-body
+	padding-bottom: 40px
+	max-width: 768px
+	display: none
+
+.select-theme
+	padding-top: 26px
+	.h3
+		margin-bottom: 40px
+
+.select-theme-btn
+	margin-bottom: 32px
+
+.section-dark
+	background-color: $dark-blue
+	color: #fff
+	position: relative
+	.section-title
+		span
+			color: #fff
+	.lines
+		z-index: 0
+		span
+			background-color: #d9f2ff
+			opacity: .15
+	.container
+		position: relative
+		z-index: 1
+
+.s-subscribe
+	padding-bottom: 0
+
+.soc-network
+	position: relative
+	&:last-child
+		.soc-network-row
+			&:after
+				opacity: 0
+
+.soc-network-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: hidden
+	transition: all .5s ease
+	opacity: 0
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42))
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		transition: transform 3s ease
+
+.soc-network-row
+	display: flex
+	align-items: center
+	margin: 0 -15px
+	padding-top: 80px
+	padding-bottom: 80px
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 15px
+		right: 15px
+		height: 1px
+		background-color: rgba(#E3F6FF, .4)
+		transition: all .5s ease
+
+.soc-network-col
+	width: 100%
+	max-width: 25%
+	flex-basis: 25%
+	padding: 0 15px
+
+.soc-network-svg
+	text-align: center
+	svg
+		width: 180px
+		height: auto
+		path
+			transition: all .5s ease
+
+.instagram-icon
+	svg
+		linearGradient
+			stop
+				transition: all .5s ease
+
+.soc-network-acc
+	.h4
+		margin-bottom: 30px
+
+.soc-network-subscribers
+	display: flex
+	align-items: flex-start
+	span
+		font-size: 66px
+		margin-right: 15px
+		line-height: 1
+
+.soc-network-info
+	ul
+		padding: 0
+		list-style-type: none
+		margin: 0
+		li
+			position: relative
+			padding-left: 15px
+			margin-bottom: 7px
+			&:last-child
+				margin-bottom: 0
+			&:before
+				content: ''
+				position: absolute
+				top: 13px
+				left: 0
+				width: 5px
+				height: 5px
+				border-radius: 50%
+				background-color: #fff
+
+.soc-network-link
+	a
+		display: flex
+		align-items: center
+		justify-content: space-between
+		color: #fff !important
+		text-decoration: none !important
+		transition: all .5s ease
+		span
+			width: 110px
+			min-width: 110px
+			height: 110px
+			border: 2px solid #fff
+			border-radius: 50%
+			background-image: url(../img/icons/arrow-right-light.svg)
+			background-size: 42px
+			background-repeat: no-repeat
+			background-position: center
+			transition: all .5s ease
+
+.footer
+	padding: 45px 0 60px
+
+.footer-row
+	display: flex
+	align-items: center
+	margin-bottom: 62px
+
+.footer-logo
+	margin-right: auto
+
+.footer-menu
+	display: flex
+	margin-right: 73px
+	.menu-link
+		color: #fff
+
+.footer-callback
+	.btn
+		padding: 0 24px
+		height: 46px
+		line-height: 46px
+
+.footer-bottom
+	display: flex
+	justify-content: space-between
+	align-items: center
+	font-size: 14px
+	color: rgba(#fff, .6)
+
+.dev-link
+	display: inline-flex
+	align-items: flex-start
+	color: rgba(#fff, .6) !important
+	text-decoration: none !important
+	img
+		width: 90px
+		min-width: 90px
+		margin-left: 20px
+		opacity: .5
+		margin-top: 4px
+
+.animate
+	transition: transform .8s ease, opacity .8s ease
+	opacity: 0
+	transform: translateY(40px)
+	&.animate-scale
+		opacity: 1
+		transform: translateY(0) scale(.93)
+	&.animate-fade-in
+		opacity: 1
+		transform: translateY(0) scale(1)
+
+@import "media" // Always at the end
