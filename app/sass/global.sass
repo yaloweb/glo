@@ -19,12 +19,24 @@ body
 		.main-window-left
 			&:after
 				transform: scaleY(0)
-		.main-window-left-content
+		.main-window-left-items
 			transform: translateY(80px)
 			opacity: 0
 		.main-window-right
 			transform: translateY(80px)
 			opacity: 0
+	&.is-admin
+		.main-slider-item
+			position: static !important
+			margin: 0 !important
+			transform: none !important
+			border-radius: 0 !important
+			img
+				border-right: 0 !important
+		.main-slider
+			overflow: visible !important
+			height: auto !important
+
 
 b, strong
 	font-weight: bold
@@ -92,6 +104,10 @@ section
 	img
 		width: 263px
 
+.header-right
+	display: flex
+	align-items: center
+
 .header-menu
 	display: flex
 	margin-right: 73px
@@ -112,9 +128,6 @@ section
 .header-callback
 	.btn
 		padding: 0 24px
-
-.mobile-header
-	display: none
 
 .mob-menu-header
 	display: none
@@ -158,6 +171,7 @@ section
 	overflow: hidden
 	white-space: nowrap
 	flex-shrink: 0
+	text-align: center
 	span
 		transition: transform .3s ease
 		display: inline-block
@@ -236,8 +250,18 @@ section
 		transition: transform .7s ease
 		transform-origin: center bottom
 
-.main-window-left-content
+.main-window-left-items
 	transition: transform .7s ease, opacity .7s ease
+
+.main-window-left-content
+	display: none
+	transition: transform .4s ease, opacity .4s ease
+	transform: translateX(40px)
+	opacity: 0
+	&.active
+		display: block
+		opacity: 1
+		transform: translateX(0)
 	.h1
 		font-size: 110px
 		line-height: 1.091
@@ -267,7 +291,7 @@ section
 	display: flex
 	font-size: 14px
 	font-family: $font2
-	span
+	> span
 		position: relative
 		padding-right: 62px
 		&:last-child
@@ -284,12 +308,13 @@ section
 			top: 50%
 			margin-top: -1px
 			background-color: rgba($dark-blue, .5)
-	a
-		color: rgba($dark-blue, .5)
-		transition: $time
-		text-decoration: none !important
-		&.active
-			color: $dark-blue
+		&:first-child
+			> span
+				color: $dark-blue
+		> span
+			color: rgba($dark-blue, .5)
+			transition: $time
+			text-decoration: none !important
 
 .main-slider-wrapper
 	margin-right: -70px
@@ -332,7 +357,7 @@ section
 	left: 50%
 	margin-top: -60px
 	margin-left: -60px
-	background-image: url(../img/icons/play.svg)
+	background-image: url(../img/play.svg)
 	background-size: 30px
 	background-repeat: no-repeat
 	background-position: top 50% left calc(50% + 4px)
@@ -355,7 +380,7 @@ section
 	height: 61px
 	bottom: 155px
 	right: 40px
-	background-image: url(../img/icons/arrow-right.svg)
+	background-image: url(../img/arrow-right.svg)
 	background-size: 23px
 	&:after
 		content: ''
@@ -374,7 +399,7 @@ section
 	height: 44px
 	right: 123px
 	bottom: 88px
-	background-image: url(../img/icons/arrow-left.svg)
+	background-image: url(../img/arrow-left.svg)
 	background-size: 17px
 
 .numbers
@@ -554,7 +579,7 @@ section
 			right: -30px
 			top: 50%
 			margin-top: -30px
-			background-image: url(../img/icons/arrow-right.svg) !important
+			background-image: url(../img/arrow-right.svg) !important
 			background-size: 23px !important
 			&:after
 				content: ''
@@ -573,7 +598,7 @@ section
 			right: -22px
 			margin-top: 90px
 			bottom: 88px
-			background-image: url(../img/icons/arrow-left.svg) !important
+			background-image: url(../img/arrow-left.svg) !important
 			background-size: 17px
 
 .section-blue
@@ -807,14 +832,15 @@ section
 			.h4, p
 				transform: translateY(0)
 				opacity: 1
+				
 .article-dark
-	color: #fff
+	color: #fff !important
 	.article-bg
 		&:after
 			display: none
 	.article-views
 		&:after
-			background-image: url(../img/icons/eye-white.svg)
+			background-image: url(../img/eye-white.svg)
 
 .article-bg
 	position: absolute
@@ -879,7 +905,7 @@ section
 		position: absolute
 		width: 15px
 		height: 11px
-		background-image: url(../img/icons/eye.svg)
+		background-image: url(../img/eye.svg)
 		background-size: contain
 		background-repeat: no-repeat
 		background-position: center
@@ -984,6 +1010,7 @@ section
 
 .s-subscribe
 	padding-bottom: 0
+	overflow: hidden
 
 .soc-network
 	position: relative
@@ -1099,7 +1126,7 @@ section
 			height: 110px
 			border: 2px solid #fff
 			border-radius: 50%
-			background-image: url(../img/icons/arrow-right-light.svg)
+			background-image: url(../img/arrow-right-light.svg)
 			background-size: 42px
 			background-repeat: no-repeat
 			background-position: center

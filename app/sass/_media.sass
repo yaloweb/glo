@@ -208,20 +208,16 @@
 		margin-right: 30px
 // ≥992px
 +media-breakpoint-down(md)
-	.mobile-header
-		display: flex
-		align-items: center
-		justify-content: space-between
 	.header-open-menu
 		width: 32px
 		height: 32px
 		min-width: 32px
-		background-image: url(../img/icons/menu.svg)
+		background-image: url(../img/menu.svg)
 		background-size: contain
 		background-repeat: no-repeat
 		background-position: center
 		cursor: pointer
-	.header-row
+	.header-right
 		position: fixed
 		top: 0
 		right: 0
@@ -247,13 +243,11 @@
 		width: 32px
 		height: 32px
 		min-width: 32px
-		background-image: url(../img/icons/close-white.svg)
+		background-image: url(../img/close-white.svg)
 		background-size: contain
 		background-repeat: no-repeat
 		background-position: center
 		cursor: pointer
-	.hide-on-mob
-		display: none !important
 	.header-menu
 		flex-direction: column
 		padding-left: 30px
@@ -321,6 +315,8 @@
 	.select-theme-nav
 		display: flex
 		overflow-x: auto
+		margin: 0 -24px
+		padding: 0 24px
 	.select-theme-btn
 		margin: 0 8px 0 0
 	.soc-network-row
@@ -337,6 +333,7 @@
 		&:nth-child(2)
 			width: 100%
 			flex-basis: calc(100% - 140px)
+			max-width: calc(100% - 140px)
 			padding-left: 40px
 	.footer-row
 		flex-wrap: wrap
@@ -354,7 +351,17 @@
 		order: 2
 		width: 50%
 		text-align: right
-
+	.btn-blue
+		background-color: #E4F6FE !important
+		&:after,
+		&:before
+			opacity: 0
+		&:hover
+			background-color: $blue !important
+	.section-blue .btn-blue
+		background-color: #fff !important
+		&:hover
+			background-color: $blue !important
 // ≥768px
 +media-breakpoint-down(sm)
 	.main-slider-wrapper
@@ -410,11 +417,15 @@
 		font-size: 14px
 	section
 		padding: 60px 0
+	h2, .h2
+		font-size: 34px
+	h3, .h3
+		font-size: 24px
 	.lines
 		display: none !important
 	.container
 		padding: 0 24px
-	.header-row
+	.header-right
 		width: 100%
 	.main-slider
 		width: calc(100vw - 48px)
@@ -447,16 +458,16 @@
 		button
 			&.owl-next,
 			&.owl-prev
-		.course-slider-title
-			font-size: 32px
 				width: 40px
 				height: 40px
-				background-size: 15px
+				background-size: 15px !important
 			&.owl-next
 				right: 0
 				margin-top: -20px
 				&:after
 					display: none
+	.course-slider-title
+		font-size: 32px
 	.main-window-left
 		margin-top: 20px
 		padding-left: 0
@@ -506,6 +517,217 @@
 		span
 			font-size: 20px
 			margin: 0 0 0 auto
+	.section-title
+		margin-bottom: 40px
+		span
+			font-size: 12px
+	.nav
+		overflow-x: auto
+		margin: 0 -24px 30px
+		padding-left: 24px
+		padding-right: 24px
+		.btn
+			height: 39px
+			line-height: 39px
+			padding: 0 30px
+			margin-right: 8px
+	.course
+		border-radius: 20px
+	.course-header
+		padding: 20px
+		height: 114px
+	.stick
+		height: 30px
+		line-height: 30px
+		padding: 0 10px
+		font-size: 12px
+		margin: 0 5px 5px 0
+	.course-body
+		padding: 25px 20px 20px
+	.course-title
+		margin-bottom: 15px
+		span
+			font-size: 10px
+			margin-bottom: 8px
+	.course-descr
+		margin-bottom: 15px
+	.course-footer
+		display: block
+	.course-price
+		padding-right: 0
+		margin-bottom: 17px
+		font-size: 12px
+	.course-btn
+		.btn
+			width: 100%
+	.fact
+		margin-bottom: 60px
+	.fact-img
+		img
+			border-radius: 20px
+	.fact-text
+		p
+			margin-bottom: 25px
+		.btn
+			width: calc(100% - 40px)
+			margin-left: 20px
+	.skill-tabs-header
+		border-radius: 0
+		overflow: visible
+		margin-bottom: 30px
+		&:after
+			display: none
+	.skill-tabs-nav
+		position: relative
+		left: auto
+		right: auto
+		top: auto
+		overflow-x: auto
+		margin-bottom: 30px
+	.skill-tabs-link
+		font-size: 12px
+		color: $dark-blue !important
+		position: relative
+		margin-right: 24px
+		padding-bottom: 15px
+		&.active
+			&:before
+				transform: scaleX(1)
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			height: 2px
+			right: -24px
+			background-color: rgba($dark-blue, .2)
+		&:before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			height: 2px
+			right: 0
+			background-color: rgba($dark-blue, 1)
+			transition: $time
+			transform: scaleX(0)
+		&:after
+			bottom: 0
+	.skill-tabs-border
+		display: none
+	.skill-tabs-img
+		height: 200px
+		border-radius: 20px
+	.article
+		padding: 20px
+		color: $dark-blue
+	.article-bg
+		border-radius: 20px
+		img
+			border-radius: 20px
+	.article-content
+		padding-top: 40px
+		width: 100%
+		.h4
+			transform: none !important
+		p
+			display: none
+	.article-footer
+		font-size: 12px
+	.article-views
+		&:after
+			top: 5px
+	.check-all
+		margin-top: 0
+		padding-left: 20px
+		padding-right: 20px
+		.btn
+			width: 100%
+	.select-theme-btn
+		.btn
+			height: 39px
+			line-height: 39px
+			padding: 0 30px
+	.accordion-title
+		padding-top: 20px
+		padding-bottom: 20px
+		span
+			width: 34px
+			height: 34px
+			margin-top: -17px
+			&:before
+				width: 16px
+				margin-left: -8px
+			&:after
+				height: 16px
+				margin-top: -8px
+	.accordion-body
+		padding-bottom: 18px
+	.soc-network-row
+		padding: 30px 0 0
+		margin: 0
+		&:after
+			left: 0
+			right: 0
+		&:last-child
+			&:after
+				opacity: 1 !important
+	.soc-network-col
+		padding-left: 0
+		padding-right: 0
+	.soc-network-svg
+		padding-right: 20px
+		svg
+			width: 100px
+	.soc-network-col:nth-child(2)
+		padding-left: 0
+		width: 100%
+		flex-basis: calc(100% - 120px)
+		max-width: calc(100% - 120px)
+	.soc-network-acc
+		.h4
+			font-size: 24px
+			margin-bottom: 18px
+	.soc-network-info
+		font-size: 12px
+		ul
+			li
+				&:before
+					top: 8px
+	.soc-network-link
+		a
+			font-size: 0 !important
+			span
+				width: 60px
+				height: 60px
+	.footer
+		padding: 30px 0 26px
+	.footer-row
+		display: block
+		margin-bottom: 34px
+	.footer-logo
+		display: none
+	.footer-callback
+		width: 100%
+		padding-left: 20px
+		padding-right: 20px
+		.btn
+			width: 100%
+	.footer-bottom
+		font-size: 9px
+	.dev-link
+		align-items: center
+		img
+			width: 71px
+			min-width: 71px
+			margin-top: 0px
+			transform: translateY(3px)
+	
+@media (max-width: 359.98px)
+	.soc-network-acc .h4
+		font-size: 18px
+	.soc-network-subscribers span
+		font-size: 30px
 
 /*==========  Mobile First  ==========*/
 

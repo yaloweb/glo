@@ -22,6 +22,7 @@
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
 
+	<link rel="stylesheet" href="js/owlcarousel/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/global.css">
 
 </head>
@@ -40,51 +41,48 @@
 
 	<header class="header">
 		<div class="container">
-
-			<div class="mobile-header">
-				<div class="header-logo">
-					<a href="#" class="logo">
-						<img src="img/logo.png" alt="">
-					</a>
-				</div>
-				<div class="header-open-menu"></div>
-			</div>
 			
 			<div class="header-row">
-
-				<div class="mob-menu-header">
-					<div class="header-logo">
-						<a href="#" class="logo">
-							<img src="img/logo-white.png" alt="">
-						</a>
-					</div>
-					<div class="header-close-menu"></div>
-				</div>
 				
-				<div class="header-logo hide-on-mob">
+				<div class="header-logo">
 					<a href="#" class="logo">
 						<img src="img/logo.png" data-mob-src="img/logo-white.png" alt="">
 					</a>
 				</div>
 
-				<nav class="header-menu">
-					<a href="#" class="menu-link">Статьи</a>
-					<a href="#" class="menu-link">Видеоуроки</a>
-					<a href="#" class="menu-link">Мастер-классы</a>
-					<a href="#" class="menu-link">Курсы</a>
-					<a href="#" class="menu-link">Контакты</a>
-				</nav>
+				<div class="header-open-menu"></div>
 
-				<div class="header-callback">
-					<button class="btn open-popup" data-target="#callback"><span>Задать вопрос</span></button>
+				<div class="header-right">
+
+					<div class="mob-menu-header">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<img src="img/logo-white.png" alt="">
+							</a>
+						</div>
+						<div class="header-close-menu"></div>
+					</div>
+
+					<nav class="header-menu">
+						<a href="#" class="menu-link">Статьи</a>
+						<a href="#" class="menu-link">Видеоуроки</a>
+						<a href="#" class="menu-link">Мастер-классы</a>
+						<a href="#" class="menu-link">Курсы</a>
+						<a href="#" class="menu-link">Контакты</a>
+					</nav>
+
+					<div class="header-callback">
+						<button class="btn open-popup" data-target="#callback"><span>Задать вопрос</span></button>
+					</div>
+
+					<nav class="header-soc">
+						<a href="#" class="soc-link"><img src="img/instagram.svg" alt=""></a>
+						<a href="#" class="soc-link"><img src="img/vk.svg" alt=""></a>
+						<a href="#" class="soc-link"><img src="img/telegram.svg" alt=""></a>
+						<a href="#" class="soc-link"><img src="img/youtube.svg" alt=""></a>
+					</nav>
+
 				</div>
-
-				<nav class="header-soc">
-					<a href="#" class="soc-link"><img src="img/icons/instagram.svg" alt=""></a>
-					<a href="#" class="soc-link"><img src="img/icons/vk.svg" alt=""></a>
-					<a href="#" class="soc-link"><img src="img/icons/telegram.svg" alt=""></a>
-					<a href="#" class="soc-link"><img src="img/icons/youtube.svg" alt=""></a>
-				</nav>
 
 			</div>
 
@@ -98,22 +96,46 @@
 				
 				<div class="main-window-left">
 
-					<div class="main-window-left-content">
+					<div class="main-window-left-items">
 
-						<div class="h1">Школа верстки<br>GLO Academy</div>
-						<p>У нас самый широкий и интересный спектр программ обучения веб-разработки в Татарстане</p>
+						<div class="main-window-left-content">
 
-						<nav class="main-window-nav">
-							<a href="#" class="btn btn-blue"><span>курсы</span></a>
-							<a href="#" class="btn btn-blue"><span>вебинары</span></a>
-							<a href="#" class="btn btn-blue"><span>практикумы</span></a>
-						</nav>
+							<div class="main-window-slider-content">
+								<img src="img/content/main-slide-1.jpg" alt="">
+								<a href="#" class="play-btn"></a>
+							</div>
 
-						<div class="main-window-pagination">
-							<span><a href="#" class="active">01</a></span>
-							<span><a href="#">02</a></span>
+							<div class="h1">Школа верстки<br>GLO Academy</div>
+							<p>У нас самый широкий и интересный спектр программ обучения веб-разработки в Татарстане</p>
+
+							<nav class="main-window-nav">
+								<a href="#" class="btn btn-blue"><span>курсы</span></a>
+								<a href="#" class="btn btn-blue"><span>вебинары</span></a>
+								<a href="#" class="btn btn-blue"><span>практикумы</span></a>
+							</nav>
+
 						</div>
 
+						<div class="main-window-left-content">
+
+							<div class="main-window-slider-content">
+								<img src="img/content/main-slide-2.jpg" alt="">
+							</div>
+
+							<div class="h1">Школа верстки<br>2</div>
+							<p>У нас самый широкий и интересный спектр программ обучения веб-разработки в Татарстане</p>
+
+							<nav class="main-window-nav">
+								<a href="#" class="btn btn-blue"><span>курсы</span></a>
+							</nav>
+
+						</div>
+
+					</div>
+
+					<div class="main-window-pagination">
+						<span><span></span></span>
+						<span><span></span></span>
 					</div>
 
 				</div>
@@ -122,15 +144,7 @@
 					
 					<div class="main-slider-wrapper">
 
-						<div class="main-slider">
-							<div class="main-slider-item active">
-								<img src="img/main-slide-1.jpg" alt="">
-								<a href="#" class="play-btn"></a>
-							</div>
-							<div class="main-slider-item">
-								<img src="img/main-slide-2.jpg" alt="">
-							</div>
-						</div>
+						<div class="main-slider"></div>
 
 						<div class="main-slider-nav">
 							<button class="main-slider-prev main-slider-btn"></button>
@@ -189,7 +203,7 @@
 				<div class="course-slider-item">
 					<a href="#" class="course-slider-mob-link"></a>
 					<div class="course-slider-bg">
-						<img src="img/course-slide.jpg" alt="">
+						<img src="img/content/course-slide.jpg" alt="">
 					</div>
 					<div class="course-slider-img">
 						<img src="img/wordpress-logo.svg" alt="">
@@ -214,7 +228,7 @@
 				<div class="course-slider-item">
 					<a href="#" class="course-slider-mob-link"></a>
 					<div class="course-slider-bg">
-						<img src="img/course-slide.jpg" alt="">
+						<img src="img/content/course-slide.jpg" alt="">
 					</div>
 					<div class="course-slider-img">
 						<img src="img/wordpress-logo.svg" alt="">
@@ -239,7 +253,7 @@
 				<div class="course-slider-item">
 					<a href="#" class="course-slider-mob-link"></a>
 					<div class="course-slider-bg">
-						<img src="img/course-slide.jpg" alt="">
+						<img src="img/content/course-slide.jpg" alt="">
 					</div>
 					<div class="course-slider-img">
 						<img src="img/wordpress-logo.svg" alt="">
@@ -296,7 +310,7 @@
 					<div class="col-md-6">
 						<div class="course">
 							<div class="course-header">
-								<img src="img/course-1.svg" alt="">
+								<img src="img/content/course-1.svg" alt="">
 								<div class="stick">Старт 28 агуста</div>
 							</div>
 							<div class="course-body">
@@ -318,7 +332,7 @@
 					<div class="col-md-6">
 						<div class="course">
 							<div class="course-header">
-								<img src="img/course-2.svg" alt="">
+								<img src="img/content/course-2.svg" alt="">
 								<div class="stick">Старт 1 сентября</div>
 							</div>
 							<div class="course-body">
@@ -340,7 +354,7 @@
 					<div class="col-md-6">
 						<div class="course">
 							<div class="course-header">
-								<img src="img/course-3.svg" alt="">
+								<img src="img/content/course-3.svg" alt="">
 								<div class="stick">Старт 2 сентября</div>
 							</div>
 							<div class="course-body">
@@ -362,7 +376,7 @@
 					<div class="col-md-6">
 						<div class="course">
 							<div class="course-header">
-								<img src="img/course-4.svg" alt="">
+								<img src="img/content/course-4.svg" alt="">
 								<div class="stick">Старт 28 агуста</div>
 							</div>
 							<div class="course-body">
@@ -401,7 +415,7 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="fact-img animate animate-scale">
-								<img src="img/fact-1.jpg" alt="">
+								<img src="img/content/fact-1.jpg" alt="">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -418,7 +432,7 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="fact-img animate animate-scale">
-								<img src="img/fact-2.jpg" alt="">
+								<img src="img/content/fact-2.jpg" alt="">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -433,7 +447,7 @@
 
 				<div class="fact full-width">
 					<div class="fact-img animate animate-scale">
-						<img src="img/fact-3.jpg" alt="">
+						<img src="img/content/fact-3.jpg" alt="">
 					</div>
 					<div class="fact-text">
 						<div class="h3">Расскажем обо всех тонкостях професии веб-разработчика</div>
@@ -468,23 +482,21 @@
 
 					<nav class="skill-tabs-nav">
 						<div class="skill-tabs-border"></div>
-						<a href="#skill-tab-1" class="skill-tabs-link">Создание концепций</a>
-						<a href="#skill-tab-2" class="skill-tabs-link">Дисциплина</a>
-						<a href="#skill-tab-3" class="skill-tabs-link">Общение с заказчиком</a>
-						<a href="#skill-tab-4" class="skill-tabs-link">Понимание цифровой среды</a>
+						<a href="#" class="skill-tabs-link">Создание концепций</a>
+						<a href="#" class="skill-tabs-link">Дисциплина</a>
+						<a href="#" class="skill-tabs-link">Общение с заказчиком</a>
+						<a href="#" class="skill-tabs-link">Понимание цифровой среды</a>
 					</nav>
 
-					<div class="skill-tabs-img-list">
-						<div class="skill-tabs-img" data-for="#skill-tab-1" style="background-image: url(img/skill-tab-bg.jpg);"></div>
-						<div class="skill-tabs-img" data-for="#skill-tab-2" style="background-image: url(img/skill-tab-bg.jpg);"></div>
-						<div class="skill-tabs-img" data-for="#skill-tab-3" style="background-image: url(img/skill-tab-bg.jpg);"></div>
-						<div class="skill-tabs-img" data-for="#skill-tab-4" style="background-image: url(img/skill-tab-bg.jpg);"></div>
-					</div>
+					<div class="skill-tabs-img-list"></div>
 
 				</div>
 
 				<div class="skill-tabs-body">
-					<div class="skill-tabs-body-item" id="skill-tab-1">
+					<div class="skill-tabs-body-item">
+						<div class="skill-tabs-img">
+							<img src="img/content/skill-tab-bg.jpg" alt="">
+						</div>
 						<div class="fact-text">
 							<div class="h3">7 дисциплин, которые стоит знать программисту</div>
 							<div class="row">
@@ -497,7 +509,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="skill-tabs-body-item" id="skill-tab-2">
+					<div class="skill-tabs-body-item">
+						<div class="skill-tabs-img">
+							<img src="img/content/skill-tab-bg.jpg" alt="">
+						</div>
 						<div class="fact-text">
 							<div class="h3">7 дисциплин, которые стоит знать программисту</div>
 							<div class="row">
@@ -510,7 +525,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="skill-tabs-body-item" id="skill-tab-3">
+					<div class="skill-tabs-body-item">
+						<div class="skill-tabs-img">
+							<img src="img/content/skill-tab-bg.jpg" alt="">
+						</div>
 						<div class="fact-text">
 							<div class="h3">7 дисциплин, которые стоит знать программисту</div>
 							<div class="row">
@@ -523,7 +541,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="skill-tabs-body-item" id="skill-tab-4">
+					<div class="skill-tabs-body-item">
+						<div class="skill-tabs-img">
+							<img src="img/content/skill-tab-bg.jpg" alt="">
+						</div>
 						<div class="fact-text">
 							<div class="h3">7 дисциплин, которые стоит знать программисту</div>
 							<div class="row">
@@ -571,7 +592,7 @@
 							<a href="#" class="article-link"></a>
 							<div class="stick">Полезное</div>
 							<div class="article-bg">
-								<img src="img/article-1.jpg" alt="">
+								<img src="img/content/article-1.jpg" alt="">
 							</div>
 							<div class="article-content">
 								<div class="h4">Эмпирический конкурент: методология и особенности</div>
@@ -589,7 +610,7 @@
 							<a href="#" class="article-link"></a>
 							<div class="stick">Статьи</div>
 							<div class="article-bg">
-								<img src="img/article-2.jpg" alt="">
+								<img src="img/content/article-2.jpg" alt="">
 							</div>
 							<div class="article-content">
 								<div class="h4">Что нужно знать о Pomodoro</div>
@@ -607,7 +628,7 @@
 							<a href="#" class="article-link"></a>
 							<div class="stick">Статьи</div>
 							<div class="article-bg">
-								<img src="img/article-3.jpg" alt="">
+								<img src="img/content/article-3.jpg" alt="">
 							</div>
 							<div class="article-content">
 								<div class="h4">Что делать, когда уже освоил HTML и CSS?</div>
@@ -625,7 +646,7 @@
 							<a href="#" class="article-link"></a>
 							<div class="stick">Статьи</div>
 							<div class="article-bg">
-								<img src="img/article-4.jpg" alt="">
+								<img src="img/content/article-4.jpg" alt="">
 							</div>
 							<div class="article-content">
 								<div class="h4">Как я выстраиваю свой рабочий день</div>
@@ -643,7 +664,7 @@
 							<a href="#" class="article-link"></a>
 							<div class="stick">Статьи</div>
 							<div class="article-bg">
-								<img src="img/article-5.jpg" alt="">
+								<img src="img/content/article-5.jpg" alt="">
 							</div>
 							<div class="article-content">
 								<div class="h4">Я нашёл заказ на 70000 рублей</div>
@@ -661,7 +682,7 @@
 							<a href="#" class="article-link"></a>
 							<div class="stick">Полезное</div>
 							<div class="article-bg">
-								<img src="img/article-6.jpg" alt="">
+								<img src="img/content/article-6.jpg" alt="">
 							</div>
 							<div class="article-content">
 								<div class="h4">Эмпирический конкурент: методология и особенности</div>
@@ -1033,7 +1054,9 @@
 		</div>
 	</footer>
 
-	<script src="js/scripts.min.js"></script>
+	<script src="js/jquery/dist/jquery.min.js"></script>
+	<script src="js/owlcarousel/owl.carousel.min.js"></script>
+	<script src="js/global.js"></script>
 
 </body>
 </html>
