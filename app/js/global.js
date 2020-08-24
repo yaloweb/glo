@@ -190,6 +190,31 @@ $(function() {
 
 	}animation($(window).scrollTop());
 
+	$('.photo-gallery').fotorama({
+		nav: 'thumbs',
+		thumbmargin: 30,
+		thumbwidth: 52,
+		thumbheight: 52
+	});
+
+	$('.content-nav a').on('click', function(e) {
+		e.preventDefault();
+		let ths = $(this),
+				id = ths.attr('href');
+		$('.content-nav a').removeClass('active');
+		ths.addClass('active')
+		$('html, body').animate({
+			scrollTop: $(id).offset().top
+		}, 1000)
+	});
+
+	$('.articles-slider').owlCarousel({
+		items: 4,
+		margin: 30,
+		nav: true,
+		dots: false
+	})
+
 	$(document).on('click', function(e) {
 		if ( !$(e.target).closest('.header').length ) {
 			$('.header-right').removeClass('opened')

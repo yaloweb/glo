@@ -25,6 +25,9 @@ body
 		.main-window-right
 			transform: translateY(80px)
 			opacity: 0
+		.page-header
+			opacity: 0
+			transform: translateY(50px)
 	&.is-admin
 		.main-slider-item
 			position: static !important
@@ -47,6 +50,9 @@ h1, h2, h3, h4, h5, h6,
 	line-height: 1.23
 	margin-bottom: 1rem
 
+h1, .h2
+	font-size: 68px
+
 h2, .h2
 	font-size: 68px
 
@@ -55,6 +61,9 @@ h3, .h3
 
 h4, .h4
 	font-size: 24px
+
+h5, .h5
+	font-size: 18px
 
 section
 	padding: 110px 0
@@ -435,17 +444,25 @@ section
 	.owl-stage
 		display: flex
 		align-items: center
-	.owl-item.active
-		.course-slider-bg
-			transform: scale(1)
-			img
+	.owl-item
+		flex-shrink: 0
+		&.active
+			.course-slider-bg
 				transform: scale(1)
-		.course-slider-img
-			img
+				img
+					transform: scale(1)
+			.course-slider-img
+				img
+					transform: scale(1)
+			.course-slider-body
 				transform: scale(1)
-		.course-slider-body
-			transform: scale(1)
-
+			.article-slide
+				&:after
+					transform: scaleY(1)
+			.article-img
+				transform: scaleY(1)
+				img
+					transform: scaleY(1)
 .course-slider-item
 	display: flex
 	padding: 120px
@@ -595,9 +612,8 @@ section
 		&.owl-prev
 			width: 44px
 			height: 44px
-			right: -22px
-			margin-top: 90px
-			bottom: 88px
+			left: -78px
+			margin-top: -22px
 			background-image: url(../img/arrow-left.svg) !important
 			background-size: 17px
 
@@ -611,7 +627,8 @@ section
 	.btn
 		&:before
 			background-color: #fff
-
+	.course-body
+		border: none
 .section-title
 	margin-bottom: 70px
 	max-width: 1060px
@@ -628,6 +645,7 @@ section
 .nav
 	display: flex
 	margin-bottom: 50px
+	overflow-x: auto
 	.btn
 		margin-right: 30px
 		&:last-child
@@ -684,6 +702,9 @@ section
 	display: flex
 	flex-direction: column
 	flex-grow: 1
+	border: 1px solid #E0E0DD
+	border-top: none
+	border-radius: 0 0 30px 30px
 
 .course-title
 	margin-bottom: 35px
@@ -858,7 +879,8 @@ section
 		left: 0
 		width: 100%
 		height: 100%
-		background: linear-gradient(179.9deg, rgba(255, 255, 255, 0) -21.15%, rgba(255, 255, 255, 0.94) 60.05%)
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0) 17.1%, rgba(248, 248, 248, 0.94) 79.14%)
+
 	img
 		width: 100%
 		height: 100%
@@ -1184,5 +1206,509 @@ section
 	&.animate-fade-in
 		opacity: 1
 		transform: translateY(0) scale(1)
+
+.page-header
+	padding-top: 72px
+	padding-bottom: 80px
+	transition: opacity .6s ease, transform .6s ease
+	.h1, h1
+		margin: 0
+
+.breadcrumbs
+	padding: 0 24px
+	margin: 0 -24px 20px
+	overflow-x: auto
+	overflow-y: visible
+	ul
+		padding: 0
+		margin: 0
+		list-style-type: none
+		display: flex
+		align-items: center
+		padding-right: 24px
+		li
+			padding-right: 36px
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				width: 20px
+				height: 2px
+				background-color: #C4C4C4
+				right: 8px
+				top: 16px
+			&:last-child
+				&:after
+					display: none
+			a
+				font-size: 14px
+				color: #ACACAC
+				text-decoration: none !important
+				transition: $time
+				&:hover
+					color: $blue
+
+.articles
+	margin-bottom: 100px
+	overflow: hidden
+	.nav
+		margin-bottom: 80px
+
+.article-slide
+	border-radius: 30px
+	overflow: hidden
+	padding: 90px 90px 76px
+	background-repeat: no-repeat
+	background-position: top 50% right 0
+	background-size: 50% 100%
+	position: relative
+	margin-right: 97px
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 1
+		background: linear-gradient(90deg, #2EA9C9 51.51%, rgba(245, 211, 166, 0) 82.84%)
+		border-radius: 30px
+		transform: scaleY(.8)
+		transition: $time
+	.article-footer
+		justify-content: flex-start
+	.article-date
+		margin-right: 50px
+	.article-views
+		&:after
+			background-image: url(../img/eye-white.svg)
+
+.article-slide-link
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 3
+
+.article-slide-body
+	position: relative
+	z-index: 2
+	color: #fff
+	max-width: 70%
+
+.article-img
+	position: absolute
+	top: 0
+	right: 0
+	width: 50%
+	height: 100%
+	z-index: 0
+	border-radius: 0 30px 30px 0
+	overflow: hidden
+	transition: $time
+	transform: scaleY(.8)
+	img
+		width: 100% !important
+		height: 100%
+		object-fit: cover
+		max-width: none !important
+		transition: $time
+		transform: scaleY(1.2)
+
+.article-slide-sticks
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: 40px
+	.stick
+		margin: 0 5px 5px 0
+
+.article-slide-content
+	margin-bottom: 80px
+	.h2
+		font-size: 50px
+	p
+		max-width: 660px
+		font-size: 20px
+		margin: 0
+
+.articles-list
+	margin-top: 80px
+
+.pagination
+	margin-top: 10px
+	display: flex
+	align-items: center
+
+.pagination-prev
+	display: flex
+	a
+		background-image: url(../img/arrow-left.svg)
+
+.pagination-next
+	display: flex
+	a
+		background-image: url(../img/arrow-right.svg)
+
+.pagination-arrow
+	width: 44px
+	height: 44px
+	display: inline-block
+	background-color: $blue
+	border-radius: 50%
+	transition: $time
+	background-size: 18px
+	background-repeat: no-repeat
+	background-position: center
+	flex-shrink: 0
+
+.pagination-list
+	display: flex
+	justify-content: center
+	flex-grow: 1
+	a
+		width: 44px
+		height: 44px
+		border-radius: 50%
+		transition: $time
+		border: 2px solid rgba($blue, .5)
+		text-align: center
+		line-height: 40px
+		color: $dark-blue
+		text-decoration: none !important
+		margin: 0 15px
+		&.active
+			font-weight: bold
+			background-color: $blue
+			border-color: $blue
+			color: #fff
+
+.text-content
+	padding-right: 120px
+	line-height: 1.55
+	margin-bottom: 80px
+	.sticks
+		display: flex
+		flex-wrap: wrap
+		margin-bottom: 15px
+		.stick
+			margin: 0 5px 5px 0
+	h1, .h1
+		margin-bottom: 2.22rem
+	h2, .h2
+		margin-bottom: 2.22rem
+	h3, .h3
+		margin-bottom: 2.22rem
+		margin-top: 3.33rem
+	p
+		margin-bottom: 1.39rem
+	blockquote
+		margin-bottom: 2.22rem
+		padding: 50px 79px 50px 50px
+		background-color: #E3F6FF
+		border-radius: 20px
+		font-size: 24px
+		strong
+			display: block
+			font-family: $font2
+			margin-bottom: 20px
+	ol
+		list-style-type: none
+		padding: 0
+		margin: 0 0 2.22rem
+		counter-reset: olCounter
+		li
+			position: relative
+			margin-bottom: 1.39rem
+			padding-left: 38px
+			&:last-child
+				margin-bottom: 0
+			&:before
+				content: counter(olCounter)'.'
+				counter-increment: olCounter
+				position: absolute
+				top: -4px
+				left: 0
+				font-size: 24px
+				font-family: $font2
+				color: $blue
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0 0 2.22rem
+		li
+			position: relative
+			margin-bottom: 1.11rem
+			padding-left: 26px
+			&:after
+				content: ''
+				position: absolute
+				top: 10px
+				left: 0
+				height: 6px
+				width: 6px
+				background-color: $blue
+				border-radius: 50%
+	table
+		overflow-x: auto
+		margin-bottom: 2.22rem
+		th, td
+			padding: 24px 30px 24px 0
+		tr
+			border-bottom: 1px solid rgba($blue, .4)
+		tbody tr:last-child
+			&:last-child
+				border-bottom: none
+		th
+			color: #293F6E
+			font-size: 14px
+			font-weight: normal
+
+
+.big-text
+	font-size: 24px
+	margin-bottom: 2.22rem
+	font-weight: 500
+
+.photo-gallery
+	margin-bottom: 2.22rem
+	img
+		width: 100%
+		border-radius: 30px !important
+
+.fotorama__wrap
+	width: 100% !important
+
+.fotorama__arr
+	width: 44px
+	height: 44px
+	transform: none !important
+	opacity: 1 !important
+	border-radius: 50%
+	background-color: #fff
+	background-repeat: no-repeat
+	background-size: 17px
+	background-position: center
+	margin-top: -22px
+	&--prev
+		background-image: url(../img/arrow-left-blue.svg)
+		left: 30px
+	&--next
+		background-image: url(../img/arrow-right-blue.svg)
+		right: 30px
+
+.fotorama__video-play
+	width: 100px
+	height: 100px
+	margin-left: -50px
+	margin-top: -50px
+	background-color: #fff
+	border-radius: 50%
+	background-image: url(../img/play.svg)
+	background-size: 34px
+	background-position: top 50% left calc(50% + 4px)
+	background-repeat: no-repeat
+
+.fotorama__nav__frame--thumb
+	padding-top: 20px !important
+
+.fotorama__thumb-border
+	display: none
+
+.fotorama__thumb
+	border-radius: 50%
+
+.fotorama__nav__frame--thumb
+	img
+		opacity: 0.5 !important
+		transition: $time
+	&.fotorama__active
+		img
+			opacity: 1 !important
+	.fotorama__video-play
+		background-color: rgba(#293F6E, .7)
+		background-image: url(../img/play-white.svg)
+		background-size: 14.64px
+		background-repeat: no-repeat
+		background-position: center
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		margin: 0 !important
+
+.fotorama__video-close
+	display: none !important
+
+.fotorama__nav:after, .fotorama__nav:before, .fotorama__stage:after, .fotorama__stage:before
+	display: none !important
+
+.step
+	position: relative
+	padding-left: 91px
+	margin-top: 135px
+	margin-bottom: 80px
+
+.step-number
+	position: absolute
+	width: 76px
+	height: 76px
+	line-height: 76px
+	border-radius: 50%
+	background-color: $blue
+	color: #fff
+	font-size: 38px
+	font-family: $font2
+	text-align: center
+	top: -25px
+	left: -38px
+	&:after
+		content: ''
+		position: absolute
+		width: 150px
+		height: 150px
+		top: 50%
+		left: 50%
+		margin-top: -75px
+		margin-left: -75px
+		border: 2px solid rgba($blue, .2)
+		border-radius: 50%
+
+.text-block
+	margin-bottom: 2.22rem
+	padding: 50px
+	background-color: #E3F6FF
+	border-radius: 20px
+	background-size: 280px
+	background-repeat: no-repeat
+	background-position: top -30px right 53px
+	margin: 2.22rem 0
+	.h5, h5
+		text-transform: uppercase
+		color: $blue
+		font-family: $font1
+		font-weight: 600
+		margin-bottom: 16px
+	p
+		margin: 0
+
+.text-block-type-1
+	background-image: url(../img/text-block-bg-1.svg)
+
+.text-block-type-2
+	background-image: url(../img/text-block-bg-2.svg)
+
+.advantage
+	padding-left: 36px
+	margin-bottom: 2.22rem
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: -6px
+		left: 0
+		width: 32px
+		height: 32px
+		background-image: url(../img/check-mark.svg)
+		background-size: contain
+		background-repeat: no-repeat
+	.h5
+		margin-bottom: 14px
+	p
+		margin-bottom: 12px
+		&:last-child
+			margin-bottom: 0
+
+.text-content-footer
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-top: 85px
+
+.text-author
+	color: rgba($text, .7)
+	font-size: 14px
+	display: flex
+	align-items: center
+	span
+		margin-left: 18px
+		font-size: 18px
+		color: $text
+		font-weight: 500
+
+.share-link
+	a
+		display: flex
+		align-items: center
+		color: #008BCA !important
+		text-decoration: none !important
+		font-size: 14px
+		&:after
+			content: ''
+			width: 29px
+			height: 29px
+			flex-shrink: 0
+			background-image: url(../img/share.svg)
+			background-size: 29px
+			background-repeat: no-repeat
+			background-position: center
+			margin-left: 12px
+
+.content
+	position: sticky
+	top: 25px
+	.h4
+		margin-bottom: 40px
+
+.content-nav
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	transition: $time
+	padding-right: 100px
+	a
+		margin-bottom: 28px
+		position: relative
+		color: #008BCA !important
+		text-decoration: none !important
+		opacity: 0.45
+		transition: $time
+		&.active
+			padding-left: 12px
+			opacity: 1
+			&:before
+				transform: scaleY(1)
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			height: 100%
+			width: 2px
+			background-color: $blue
+			transition: $time
+			transform: scaleY(0)
+			transform-origin: left bottom
+
+.articles-slider-block
+	margin-bottom: 110px
+	.h3
+		margin-bottom: 46px
+
+.articles-slider
+	.owl-stage
+		display: flex
+		.owl-item
+			flex-shrink: 0
+	.owl-nav
+		button
+			&.owl-prev
+				left: -22px
+				background-color: rgba($blue, .7) !important
+	.article
+		margin: 0
+		height: 100%
+		img
+			width: 100% !important
 
 @import "media" // Always at the end

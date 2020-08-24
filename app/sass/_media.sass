@@ -6,7 +6,8 @@
 @media (max-width: 1679.98px)
 	.container
 		padding: 0 50px
-
+	.owl-nav button.owl-prev
+		left: -22px
 @media (max-width: 1599.98px)
 	h2, .h2
 		font-size: 50px
@@ -60,7 +61,8 @@
 		margin-top: 18px
 	.course-slider-item
 		margin-right: 70px
-
+	.breadcrumbs ul li:after
+		top: 12px
 @media (max-width: 1365.98px)
 	body
 		font-size: 15px
@@ -108,9 +110,12 @@
 		.soc-network-link
 			a
 				font-size: 16px
-	
+	.article-slide-body
+		max-width: 85%
 // ≥1200px
 +media-breakpoint-down(lg)
+	h1, .h2
+		font-size: 55px
 	h2, .h2
 		font-size: 40px
 	h3, .h3
@@ -206,6 +211,16 @@
 				height: 55px
 	.footer-menu
 		margin-right: 30px
+	.page-header
+		padding-top: 50px
+		padding-bottom: 50px
+	.articles .nav
+		margin-bottom: 40px
+	.article-slide
+		padding: 40px
+	.article-slide-content
+		.h2
+			font-size: 30px
 // ≥992px
 +media-breakpoint-down(md)
 	.header-open-menu
@@ -356,7 +371,8 @@
 		&:after,
 		&:before
 			opacity: 0
-		&:hover
+		&:hover,
+		&.active
 			background-color: $blue !important
 	.section-blue .btn-blue
 		background-color: #fff !important
@@ -410,13 +426,32 @@
 		transform: none !important
 	.footer-menu
 		display: none
-
+	.article-slide
+		margin-right: 12px
+	.article-slide
+		padding: 30px
+		&:after
+			transform: scale(1) !important
+	.article-img
+		transform: scale(1) !important
+		img
+			transform: scale(1) !important
+	.article-slide-sticks
+		margin-bottom: 20px
+	.article-slide-content
+		margin-bottom: 30px
+		.h2
+			font-size: 22px
+		p
+			font-size: 14px
 // ≥576px
 +media-breakpoint-down(xs)
 	body
 		font-size: 14px
 	section
 		padding: 60px 0
+	h1, .h2
+		font-size: 40px
 	h2, .h2
 		font-size: 34px
 	h3, .h3
@@ -544,6 +579,7 @@
 		margin: 0 5px 5px 0
 	.course-body
 		padding: 25px 20px 20px
+		border-radius: 0 0 20px 20px
 	.course-title
 		margin-bottom: 15px
 		span
@@ -722,7 +758,48 @@
 			min-width: 71px
 			margin-top: 0px
 			transform: translateY(3px)
-	
+	.page-header
+		padding: 20px 0
+	.breadcrumbs
+		margin-bottom: 5px
+	.articles
+		margin-bottom: 50px
+	.article-slide
+		background-color: #36A9C7
+		padding: 20px
+		&:after
+			background: linear-gradient(180deg, rgba(46, 169, 201, 0) 17.1%, rgba(46, 169, 201, 0.94) 79.14%)
+	.article-img
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 0
+	.article-slide-body
+		max-width: 100%
+		.article-footer
+			justify-content: space-between
+		.article-date
+			margin-right: 0
+	.article-slide-sticks
+		margin-bottom: 40px
+	.article-slide-content
+		margin-bottom: 0
+		.h2
+			font-size: 18px
+			margin-bottom: 10px
+		p
+			display: none
+	.articles-list
+		margin-top: 30px
+	.pagination-arrow
+		width: 34px
+		height: 34px
+	.pagination-list a
+		width: 34px
+		height: 34px
+		line-height: 30px
+		margin: 0 5px
 @media (max-width: 359.98px)
 	.soc-network-acc .h4
 		font-size: 18px
@@ -781,3 +858,6 @@
 
 // ≤1200px
 +media-breakpoint-up(xl)
+	.page-header
+		h1, .h1
+			font-size: 80px
