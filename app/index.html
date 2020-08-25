@@ -23,6 +23,7 @@
 	<!-- Custom Browsers Color End -->
 
 	<link rel="stylesheet" href="js/owlcarousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="js/fotorama/fotorama.css">
 	<link rel="stylesheet" href="css/global.css">
 
 </head>
@@ -46,7 +47,7 @@
 				
 				<div class="header-logo">
 					<a href="#" class="logo">
-						<img src="img/logo.png" data-mob-src="img/logo-white.png" alt="">
+						<img src="img/logo.png" alt="">
 					</a>
 				</div>
 
@@ -102,7 +103,11 @@
 
 							<div class="main-window-slider-content">
 								<img src="img/content/main-slide-1.jpg" alt="">
-								<a href="#" class="play-btn"></a>
+								<a href="#video-popup"
+									 class="play-btn open-popup open-video-popup"
+									 data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+									 data-poster-src="img/content/video-poster.jpg">
+								</a>
 							</div>
 
 							<div class="h1">Школа верстки<br>GLO Academy</div>
@@ -1054,8 +1059,29 @@
 		</div>
 	</footer>
 
+	<div class="popup-wrapper" id="video-popup">
+		<div class="popup-close"></div>
+		<div class="popup-flex">
+			<div class="popup-block video-popup">
+				<div class="video-popup-block">
+					<div class="video-popup-iframe">
+						<iframe frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="video-popup-poster" style="">
+						<div class="video-popup-play-btn">
+							<span></span>
+							Смотреть видео
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup-bg"></div>
+		</div>
+	</div>
+
 	<script src="js/jquery/dist/jquery.min.js"></script>
 	<script src="js/owlcarousel/owl.carousel.min.js"></script>
+	<script src="js/fotorama/fotorama.js"></script>
 	<script src="js/global.js"></script>
 
 </body>

@@ -8,6 +8,10 @@
 		padding: 0 50px
 	.owl-nav button.owl-prev
 		left: -22px
+	.content-nav
+		padding-right: 0
+	.text-content
+		padding-right: 20px
 @media (max-width: 1599.98px)
 	h2, .h2
 		font-size: 50px
@@ -46,7 +50,11 @@
 		height: 550px
 	.article-content
 		padding-top: 100px
-
+	.video-popup-iframe
+		iframe
+			height: 600px
+	.not-found-wrapper
+		padding-top: 180px
 @media (max-width: 1399.98px)
 	.header
 		padding-top: 25px
@@ -63,9 +71,17 @@
 		margin-right: 70px
 	.breadcrumbs ul li:after
 		top: 12px
+	.not-found-content
+		img
+			width: 430px
+			margin-bottom: 30px
+	.not-found-content p
+		margin-bottom: 40px
 @media (max-width: 1365.98px)
 	body
 		font-size: 15px
+	h1, .h2
+		font-size: 58px
 	.btn
 		padding: 0 24px
 		font-size: 14px
@@ -112,9 +128,17 @@
 				font-size: 16px
 	.article-slide-body
 		max-width: 85%
+	.big-text
+		font-size: 18px
+	.text-content
+		blockquote
+			padding: 35px
+			font-size: 16px
+			strong
+				margin-bottom: 10px
 // ≥1200px
 +media-breakpoint-down(lg)
-	h1, .h2
+	h1, .h1
 		font-size: 55px
 	h2, .h2
 		font-size: 40px
@@ -221,8 +245,28 @@
 	.article-slide-content
 		.h2
 			font-size: 30px
+	.text-content
+		padding-right: 0
+		img
+			border-radius: 20px
+	.popup-close
+		top: 20px
+		right: 20px
+		width: 30px
+		height: 30px
+	.popup-block
+		max-width: calc(100% - 140px)
+	.not-found-wrapper
+		margin-top: -113px
+	.header-light
+		.header-open-menu
+			background-image: url(../img/menu-white.svg)
 // ≥992px
 +media-breakpoint-down(md)
+	body
+		&.load-animation-stop
+			.header-right
+				display: block
 	.header-open-menu
 		width: 32px
 		height: 32px
@@ -246,6 +290,7 @@
 		align-items: stretch
 		transition: transform .4s ease
 		transform: translateX(100%)
+		display: none
 		&.opened
 			transform: translateX(0)
 	.mob-menu-header
@@ -378,6 +423,35 @@
 		background-color: #fff !important
 		&:hover
 			background-color: $blue !important
+	.step-number
+		width: 56px
+		height: 56px
+		line-height: 56px
+		font-size: 24px
+		left: -28px
+		top: -18px
+		&:after
+			content: ''
+			width: 100px
+			height: 100px
+			margin-top: -50px
+			margin-left: -50px
+	.step
+		margin: 80px 0
+		padding-left: 60px
+	.content
+		display: none
+	.video-popup-iframe iframe
+		height: 400px
+	.video-popup-play-btn
+		font-size: 0
+		span
+			width: 80px
+			height: 80px
+			margin: 0
+			background-size: 20px
+	.not-found-wrapper
+		margin-top: -102px
 // ≥768px
 +media-breakpoint-down(sm)
 	.main-slider-wrapper
@@ -444,6 +518,13 @@
 			font-size: 22px
 		p
 			font-size: 14px
+	.fotorama__video-play
+		width: 70px
+		height: 70px
+		margin-top: -35px
+		margin-left: -35px
+		background-size: 20px
+		background-position: top 50% left calc(50% + 2px)
 // ≥576px
 +media-breakpoint-down(xs)
 	body
@@ -800,6 +881,63 @@
 		height: 34px
 		line-height: 30px
 		margin: 0 5px
+	.text-content
+		blockquote
+			font-size: 14px
+			padding: 20px
+	.step-number
+		width: 36px
+		height: 36px
+		left: -18px
+		top: -7px
+		line-height: 36px
+		font-size: 14px
+		&:after
+			display: none
+	.step
+		padding-left: 30px
+	.text-block
+		padding: 20px
+		background-size: 150px
+		background-position: top -50px right -50px
+	.articles-slider .owl-nav button.owl-next
+		right: -20px
+	.text-author
+		display: block
+		font-size: 12px
+		span
+			font-size: 14px
+			margin-left: 5px
+	.share-link > a
+		&:after
+			width: 16px
+			height: 16px
+			margin-left: 5px
+			background-size: 16px
+		&:before
+			width: 16px
+			height: 16px
+			background-size: 16px
+			top: 2px
+	.text-content-footer
+		margin-top: 40px
+	.articles-slider-block
+		margin-bottom: 50px
+	.text-content table th, .text-content table td
+		padding-right: 10px
+		font-size: 12px
+	.articles-slider
+		.owl-stage-outer
+			overflow: visible
+		.owl-nav
+			display: none
+	.popup-close
+		width: 20px
+		height: 20px
+		top: 10px
+		right: 10px
+	.popup-block
+		max-width: calc(100% - 80px)
 @media (max-width: 359.98px)
 	.soc-network-acc .h4
 		font-size: 18px

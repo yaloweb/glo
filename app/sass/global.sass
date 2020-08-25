@@ -39,7 +39,9 @@ body
 		.main-slider
 			overflow: visible !important
 			height: auto !important
-
+	&.dark-body
+		color: #fff
+		background-color: #293F6E
 
 b, strong
 	font-weight: bold
@@ -50,7 +52,7 @@ h1, h2, h3, h4, h5, h6,
 	line-height: 1.23
 	margin-bottom: 1rem
 
-h1, .h2
+h1, .h1
 	font-size: 68px
 
 h2, .h2
@@ -101,6 +103,11 @@ section
 	padding-bottom: 38px
 	transition: transform .6s ease, opacity .6s ease
 	transition-delay: .4s
+	position: relative
+	z-index: 10
+	&.header-light
+		.menu-link
+			color: #fff
 
 .header-row
 	display: flex
@@ -130,10 +137,20 @@ section
 	text-decoration: none !important
 	font-weight: 500
 	&:hover
-		color: $accent
+		color: $accent !important
 	&:last-child
 		margin-right: 0
-
+	&.active
+		font-weight: bold
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			width: 2px
+			height: 100%
+			top: 0
+			left: -8px
+			background-color: rgba(#008bca, .6)
 .header-callback
 	.btn
 		padding: 0 24px
@@ -1219,6 +1236,7 @@ section
 	margin: 0 -24px 20px
 	overflow-x: auto
 	overflow-y: visible
+	white-space: nowrap
 	ul
 		padding: 0
 		margin: 0
@@ -1463,7 +1481,10 @@ section
 			color: #293F6E
 			font-size: 14px
 			font-weight: normal
-
+	img
+		margin-bottom: 2.22rem
+		width: 100%
+		border-radius: 30px
 
 .big-text
 	font-size: 24px
@@ -1516,7 +1537,8 @@ section
 	display: none
 
 .fotorama__thumb
-	border-radius: 50%
+	border-radius: 50% !important
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%)
 
 .fotorama__nav__frame--thumb
 	img
@@ -1598,6 +1620,9 @@ section
 .text-block-type-2
 	background-image: url(../img/text-block-bg-2.svg)
 
+.table
+	overflow-x: auto
+
 .advantage
 	padding-left: 36px
 	margin-bottom: 2.22rem
@@ -1637,12 +1662,26 @@ section
 		font-weight: 500
 
 .share-link
-	a
+	position: relative
+	&.opened
+		> a
+			color: $red
+			&:after
+				opacity: 0
+			&:before
+				opacity: 1
+		.share-dropdown
+			opacity: 1
+			transform: translateY(0)
+			visibility: visible
+	> a
 		display: flex
 		align-items: center
-		color: #008BCA !important
+		color: #008BCA
 		text-decoration: none !important
 		font-size: 14px
+		position: relative
+		transition: $time
 		&:after
 			content: ''
 			width: 29px
@@ -1653,6 +1692,110 @@ section
 			background-repeat: no-repeat
 			background-position: center
 			margin-left: 12px
+			transition: $time
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			width: 29px
+			height: 29px
+			background-image: url(../img/share-red.svg)
+			background-size: 29px
+			background-repeat: no-repeat
+			background-position: center
+			transition: $time
+			opacity: 0
+		&:hover,
+		&.active
+			color: $red
+			&:after
+				opacity: 0
+			&:before
+				opacity: 1
+
+.share-dropdown
+	position: absolute
+	right: 0
+	top: 100%
+	margin-top: 5px
+	padding: 15px 7.5px
+	z-index: 5
+	border-radius: 20px
+	box-shadow: 10px 10px 40px rgba(61, 83, 129, 0.15)
+	transition: $time
+	opacity: 0
+	transform: translateY(10px)
+	visibility: hidden
+
+.share-soc
+	display: flex
+	align-items: center
+	a
+		margin: 0 7.5px
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		width: 30px
+		height: 30px
+		flex-shrink: 0
+		position: relative
+		&:hover
+			&:before
+				opacity: 0
+			&:after
+				opacity: 1
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+			transition: $time
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+			transition: $time
+			z-index: 1
+			opacity: 0
+
+.soc
+	&-whatsapp
+		&:before
+			background-image: url(../img/whatsapp.svg)
+		&:after
+			background-image: url(../img/whatsapp-red.svg)
+	&-telegram
+		&:before
+			background-image: url(../img/telegram-small.svg)
+		&:after
+			background-image: url(../img/telegram-small-red.svg)
+	&-facebook
+		&:before
+			background-image: url(../img/facebook.svg)
+		&:after
+			background-image: url(../img/facebook-red.svg)
+	&-vk
+		&:before
+			background-image: url(../img/vk-small.svg)
+		&:after
+			background-image: url(../img/vk-small-red.svg)
+	&-copy
+		&:before
+			background-image: url(../img/copy.svg)
+		&:after
+			background-image: url(../img/copy-red.svg)
 
 .content
 	position: sticky
@@ -1692,6 +1835,7 @@ section
 
 .articles-slider-block
 	margin-bottom: 110px
+	overflow: hidden
 	.h3
 		margin-bottom: 46px
 
@@ -1710,5 +1854,196 @@ section
 		height: 100%
 		img
 			width: 100% !important
+
+.popup-wrapper
+	position: fixed
+	z-index: 200
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: none
+	&.opened
+		.popup-close
+			transform: scale(1)
+		.popup-block
+			transform: translateY(0)
+			opacity: 1
+		.popup-bg
+			opacity: 1
+
+.popup-close
+	width: 40px
+	height: 40px
+	background-image: url(../img/close-white-big.svg)
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: center
+	position: absolute
+	top: 80px
+	right: 80px
+	z-index: 2
+	cursor: pointer
+	transition: transform .4s ease
+	transform: scale(0)
+
+.popup-flex
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+
+.popup-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(#293F6E, .8)
+	transition: opacity .4s ease
+	opacity: 0
+
+.popup-block
+	position: relative
+	z-index: 1
+	width: 960px
+	max-width: calc(100% - 320px)
+	overflow-x: hidden
+	overflow-y: auto
+	border-radius: 30px
+	background-color: #fff
+	max-height: 100%
+	transition: transform .4s ease, opacity .4s ease
+	opacity: 0
+	transform: translateY(40px)
+
+
+.video-popup
+	width: 1380px
+
+.video-popup-iframe
+	display: flex
+	position: relative
+	iframe
+		height: 776px
+		width: 100%
+		max-height: 100vh
+
+.video-popup-poster
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#fff, .6)
+	&.poster-hide
+		.video-popup-play-btn
+			opacity: 0
+			transform: scale(1.3)
+
+.video-popup-play-btn
+	position: relative
+	z-index: 1
+	text-align: center
+	transition: all .4s ease
+	cursor: pointer
+	span
+		display: block
+		width: 100px
+		height: 100px
+		border-radius: 50%
+		background-color: #fff
+		background-image: url(../img/play.svg)
+		background-size: 30px
+		background-repeat: no-repeat
+		background-position: top 50% left calc(50% + 4px)
+		margin: 0 auto 15px
+
+.not-found-wrapper
+	padding-top: 230px
+	position: relative
+	padding-bottom: 50px
+	z-index: 1
+	margin-top: -152px
+	min-height: 100vh
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		width: 898px
+		height: 898px
+		border-radius: 50%
+		background-color: rgba(#E3F6FF, .02)
+		top: -33px
+		left: 50%
+		margin-left: -449px
+		z-index: -1
+	&:before
+		content: ''
+		position: absolute
+		width: 1440px
+		height: 1440px
+		border-radius: 50%
+		background-color: rgba(#E3F6FF, .02)
+		z-index: -2
+		top: -304px
+		left: 50%
+		margin-left: -720px
+
+.not-found-content
+	max-width: 651px
+	margin: 0 auto
+	text-align: center
+	img
+		width: 100%
+		margin-bottom: 50px
+		max-width: 100%
+	.h3
+		color: #E3F6FF
+		margin-bottom: 30px
+	p
+		margin-bottom: 80px
+
+.back-link
+	text-align: center
+	a
+		display: inline-flex
+		font-size: 20px
+		font-weight: 500
+		color: #fff !important
+		text-decoration: none !important
+		align-items: center
+		&:hover
+			&:before
+				transform: translateX(-5px)
+		&:before
+			content: ''
+			width: 50px
+			height: 50px
+			flex-shrink: 0
+			border-radius: 50%
+			border: 2px solid #fff
+			margin-right: 20px
+			background-image: url(../img/arrow-left.svg)
+			background-size: 22px
+			background-repeat: no-repeat
+			background-position: center
+			transition: $time
+
 
 @import "media" // Always at the end
