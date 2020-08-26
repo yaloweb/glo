@@ -272,6 +272,78 @@ $(function() {
 		$('.video-popup-iframe iframe').attr('src', $('.video-popup-iframe iframe').attr('src') + '?&autoplay=1');
 	});
 
+	$('.video-block').each(function() {
+		let ths = $(this),
+				video = ths.find('iframe'),
+				playBtn = ths.find('.video-play-btn'),
+				poster = ths.find('.video-poster'),
+				videoSrc = video.attr('src');
+		playBtn.on('click', function() {
+			poster.addClass('poster-hide').fadeOut(400);
+			video.attr('src', videoSrc + '?&autoplay=1');
+		});
+	});
+
+	$('.testimonial').each(function(i) {
+		let ths = $(this),
+				content = ths.find('.testimonial-slider-content');
+		content.remove();
+		if ( i > 7 ) {
+			ths.parent().hide()
+		}
+		$('.testimonials-slider').append(`<div class="testimonials-slider-item">${content.html()}</div>`);
+	});
+
+	$('.testimonials-open-more .btn').on('click', function() {
+		$('.testimonial').each(function() {
+			$(this).parent().fadeIn(600)
+		});
+		$(this).hide()
+	});
+
+	let testimonialsSlider = $('.testimonials-slider');
+	testimonialsSlider.owlCarousel({
+		items: 1,
+		nav: true,
+		dots: false
+	});
+
+	$('.testimonial').each(function(i) {
+		$(this).find('.open-testimonials-popup').on('click', function(e) {
+			e.preventDefault();
+			testimonialsSlider.trigger('to.owl.carousel', i);
+		});
+	});
+
+	$('.rate-item').each(function(i) {
+		let ths = $(this),
+				header = ths.find('.rates-header-item-content');
+
+		$('.rates-header').append(header.html());
+		header.remove();
+
+		if ( i == 1 ) {
+			ths.show().addClass('active');
+			$('.rates-header').find('.rates-header-item').eq(1).addClass('active');
+		}
+
+	});
+
+	$('.rates-header').on('click', '.rates-header-item', function() {
+		let ths = $(this),
+				index = ths.index(),
+				item = $('.rate-item').eq(index);
+		if ( item.is(':hidden') ) {
+			$('.rates-header-item').removeClass('active');
+			ths.addClass('active');
+			$('.rate-item').hide().removeClass('active');
+			item.show();
+			setTimeout(() => {
+				item.addClass('active')
+			}, 50)
+		}
+	});
+
 	$(document).on('click', function(e) {
 		if ( !$(e.target).closest('.header').length ) {
 			$('.header-right').removeClass('opened')
