@@ -89,8 +89,8 @@ section
 		display: inline-block
 		height: 100%
 		width: 1px
-		background-color: #008BCA
-		opacity: .2
+		background-color: #D9F2FF
+		opacity: .5
 		&:nth-child(2)
 			transform: translateX(6px)
 		&:nth-child(3)
@@ -146,10 +146,10 @@ section
 		&:after
 			content: ''
 			position: absolute
-			width: 2px
-			height: 100%
-			top: 0
-			left: -8px
+			height: 2px
+			width: 100%
+			bottom: -3px
+			left: 0
 			background-color: rgba(#008bca, .6)
 
 .header-callback
@@ -481,6 +481,7 @@ section
 				transform: scaleY(1)
 				img
 					transform: scaleY(1)
+
 .course-slider-item
 	display: flex
 	padding: 120px
@@ -647,6 +648,7 @@ section
 			background-color: #fff
 	.course-body
 		border: none
+
 .section-title
 	margin-bottom: 70px
 	max-width: 1060px
@@ -711,7 +713,8 @@ section
 	background-color: #E3F6FF
 	font-size: 14px
 	text-transform: uppercase
-	color: $blue
+	color: $blue !important
+	text-decoration: none !important
 	font-weight: 500
 	margin: 0 10px 10px 0
 	position: relative
@@ -722,7 +725,7 @@ section
 	display: flex
 	flex-direction: column
 	flex-grow: 1
-	border: 1px solid #E0E0DD
+	border: 1px solid #E3F6FF
 	border-top: none
 	border-radius: 0 0 30px 30px
 
@@ -781,6 +784,7 @@ section
 	img
 		width: 100%
 		border-radius: 30px
+		margin: 0 !important
 
 .fact-text
 	.h3
@@ -1045,8 +1049,8 @@ section
 	.lines
 		z-index: 0
 		span
-			background-color: #d9f2ff
-			opacity: .15
+			background-color: #D9F2FF
+			opacity: .1
 	.container
 		position: relative
 		z-index: 1
@@ -1169,7 +1173,7 @@ section
 			height: 110px
 			border: 2px solid #fff
 			border-radius: 50%
-			background-image: url(../img/arrow-right-light.svg)
+			background-image: url(../img/arrow-right-2.svg)
 			background-size: 42px
 			background-repeat: no-repeat
 			background-position: center
@@ -1297,6 +1301,7 @@ section
 		border-radius: 30px
 		transform: scaleY(.8)
 		transition: $time
+		transition-delay: .5s
 	.article-footer
 		justify-content: flex-start
 	.article-date
@@ -1330,6 +1335,7 @@ section
 	overflow: hidden
 	transition: $time
 	transform: scaleY(.8)
+	transition-delay: .5s
 	img
 		width: 100% !important
 		height: 100%
@@ -1337,6 +1343,7 @@ section
 		max-width: none !important
 		transition: $time
 		transform: scaleY(1.2)
+		transition-delay: .5s
 
 .article-slide-sticks
 	display: flex
@@ -1642,6 +1649,22 @@ section
 
 .table
 	overflow-x: auto
+	position: relative
+	&::webkit-scrollbar
+		width: 4px
+		height: 4px
+		background-color: #E3F6FF
+		border-radius: 10px
+	&::-webkit-scrollbar-track
+		background-color: #E3F6FF
+		border-radius: 10px
+	&::-webkit-scrollbar-thumb
+		background-color: rgba(#008BCA, .5)
+		border-radius: 10px
+	&::webkit-scrollbar-button
+		display: none
+	table
+		// min-width: 1119px
 
 .advantage
 	padding-left: 36px
@@ -1753,6 +1776,7 @@ section
 	opacity: 0
 	transform: translateY(10px)
 	visibility: hidden
+	background-color: #fff
 
 .share-soc
 	display: flex
@@ -2112,6 +2136,10 @@ section
 .course-main-date
 	font-weight: 600
 
+.course-main-right
+	img
+		width: 360px
+
 .s-course-info
 	.text-content
 		padding-right: 0
@@ -2176,6 +2204,7 @@ section
 		height: 100px
 		margin-right: 15px
 		cursor: pointer
+		flex-shrink: 0
 
 .video-block
 	margin-bottom: 80px
@@ -2271,6 +2300,8 @@ section
 	width: 100%
 	max-width: 80%
 	flex: 0 0 60%
+	.text-block
+		margin-top: 0
 
 .check-list
 	ul
@@ -2303,6 +2334,7 @@ section
 
 .s-testimonials
 	padding-bottom: 110px
+	overflow: hidden
 
 .testimonial
 	margin-bottom: 50px
@@ -2361,8 +2393,8 @@ section
 		align-items: center
 	.owl-item
 		flex-shrink: 0
-		padding-left: 40px
-		padding-right: 40px
+		padding-left: 90px
+		padding-right: 90px
 	.owl-nav
 		button
 			width: 44px !important
@@ -2406,13 +2438,14 @@ section
 		border-radius: 30px
 		margin-left: auto
 		margin-right: auto
+		max-height: 80vh
 
 .testimonials-slider-video
+	display: flex
 	.video-block
 		max-width: 1010px
-		margin-left: auto
-		height: 568px
-		margin-right: auto
+		margin: 0 auto
+		width: 100%
 	.video-poster
 		display: flex
 		align-items: center
@@ -2433,12 +2466,12 @@ section
 	padding: 60px
 	border-radius: 30px
 	background-color: #fff
+	overflow: hidden
 
 .rates-header
 	margin-bottom: 70px
 	display: flex
 	justify-content: space-between
-
 
 .rates-header-item
 	width: calc(33.3333% - 16px)
@@ -2519,6 +2552,8 @@ section
 	width: 70%
 	flex-shrink: 0
 
+
+
 .small-title
 	font-size: 14px
 	margin-bottom: 14px
@@ -2541,6 +2576,7 @@ section
 .rate-price
 	display: flex
 	align-items: center
+	white-space: nowrap
 
 .current-price
 	font-size: 38px
@@ -2574,5 +2610,228 @@ section
 .rate-price-info
 	font-size: 14px
 	margin-top: 6px
+
+.s-callback
+	.section-title
+		margin-bottom: 50px
+
+.callback-form-block
+	padding-right: 122px
+	p
+		margin-bottom: 40px
+
+
+.form-group
+	position: relative
+	margin-bottom: 35px
+
+.input-label-dark
+	color: $text
+	input
+		color: $text
+		border-bottom-color: rgba($text, .5)
+		&:focus,
+		&.has-text
+			border-bottom-color: $text
+	span
+		color: $dark
+
+.input-label
+	position: relative
+	margin: 0
+	width: 100%
+	display: block
+	span
+		position: absolute
+		top: 11px
+		transition: $time
+		left: 0
+		white-space: nowrap
+
+.form-control
+	transition: $time
+	width: 100%
+	background-color: transparent
+	border: none
+	border-bottom: 1px solid rgba(#fff, .5)
+	height: 52px
+	outline: none !important
+	color: #fff
+	&:focus,
+	&.has-text
+		border-bottom-width: 2px
+		border-bottom-color: #fff
+		& + span
+			transform: translateY(-26px)
+			font-size: 14px
+
+.form-submit
+	display: flex
+	align-items: center
+	justify-content: space-between
+	.checkbox-label
+		margin-right: 20px
+	.btn
+		font-size: 18px
+
+.checkbox-label
+	position: relative
+	margin-bottom: 0
+	input
+		position: absolute
+		z-index: -1
+		opacity: 0
+		visibility: hidden
+		&:checked + span:before
+			transform: scale(1)
+	span
+		display: inline-block
+		padding-left: 26px
+		font-size: 14px
+		text-align: left
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			top: 2px
+			left: 0
+			width: 18px
+			height: 18px
+			border: 1px solid #fff
+			cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			width: 14px
+			height: 11px
+			background-image: url(../img/check-mark-2.svg)
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+			top: 5px
+			left: 2px
+			transform: scale(0)
+			transition: $time
+			cursor: pointer
+
+.checkbox-label-dark
+	span
+		&:after
+			border-color: $text
+		&:before
+			background-image: url(../img/check-mark-2-black.svg)
+
+.callback-soc
+	p
+		margin-bottom: 45px
+
+.callback-soc-item
+	padding: 22px 0
+	border-bottom: 1px solid rgba(#fff, .2)
+	display: flex
+	align-items: center
+	&:last-child
+		border-bottom: none
+
+.callback-soc-icon
+	margin-right: 22px
+	display: flex
+	img
+		width: 50px
+		flex-shrink: 0
+
+.callback-soc-title
+	flex-grow: 1
+
+.callback-soc-link
+	display: flex
+	a
+		display: block
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		border: 2px solid #fff
+		flex-shrink: 0
+		background-image: url(../img/arrow-right.svg)
+		background-size: 21px
+		background-repeat: no-repeat
+		background-position: center
+		transition: $time
+		&:hover
+			transform: rotate(360deg)
+
+.module-list
+	display: flex
+	margin-bottom: 2.22rem
+	.h5
+		margin-bottom: 14px
+	p
+		margin-bottom: 12px
+		&:last-child
+			margin-bottom: 0
+
+.module-list-icon
+	margin-right: 4px
+	img
+		width: 32px
+
+.module-list-content
+	padding-top: 6px
+
+.popup-block-course
+	padding: 70px
+	width: 603px
+	.popup-close
+		display: none
+
+.buy-course
+	.h3
+		margin-bottom: 40px
+
+.buy-course-title
+	color: $blue
+	font-family: $font2
+	font-size: 24px
+	margin-bottom: 5px
+
+.buy-course-descr
+	margin-bottom: 12px
+
+.buy-course-price
+	padding: 10px 0
+	border-top: 1px solid rgba(#008BCA, .2)
+	border-bottom: 1px solid rgba(#008BCA, .2)
+	margin-bottom: 40px
+	span
+		font-family: $font2
+		font-size: 24px
+
+.buy-course-form-title
+	margin-bottom: 30px
+
+.buy-form
+	.form-submit
+		display: block
+		text-align: center
+		.checkbox-label
+			margin: 15px 0 0
+			width: 100%
+			text-align: center
+	.btn
+		margin: 0 !important
+
+.s-recl
+	padding-top: 80px
+
+.recl-block
+	border-radius: 30px
+	padding: 60px
+	background-color: #F4FCFF
+	img
+		width: 100%
+		border-radius: 10px
+		min-height: 125px
+		object-fit: cover
+		margin: 0 !important
 
 @import "media" // Always at the end

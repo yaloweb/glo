@@ -62,7 +62,6 @@ $(function() {
 				margin: 27,
 				autoWidth: true,
 				mouseDrag: false,
-				touchDrag: false
 			})
 			mainSlider.on('changed.owl.carousel', function(e) {
 				let currentIndex = e.item.index;
@@ -253,8 +252,12 @@ $(function() {
 		let id = $(this).attr('href');
 		$(id).show();
 		setTimeout(() => {
-			$(id).addClass('opened')
+			$(id).addClass('opened');
+			checkVideoProportions();
 		}, 50)
+		setTimeout(() => {
+			checkVideoProportions();
+		}, 150)
 	});
 
 	function closePopup() {
@@ -272,17 +275,20 @@ $(function() {
 		$('.video-popup-iframe iframe').attr('src', $('.video-popup-iframe iframe').attr('src') + '?&autoplay=1');
 	});
 
-	$('.video-block').each(function() {
-		let ths = $(this),
-				video = ths.find('iframe'),
-				playBtn = ths.find('.video-play-btn'),
-				poster = ths.find('.video-poster'),
-				videoSrc = video.attr('src');
-		playBtn.on('click', function() {
-			poster.addClass('poster-hide').fadeOut(400);
-			video.attr('src', videoSrc + '?&autoplay=1');
+	function checkVideoBlock() {
+		$('.video-block').each(function() {
+			let ths = $(this),
+					video = ths.find('iframe'),
+					playBtn = ths.find('.video-play-btn'),
+					poster = ths.find('.video-poster'),
+					videoSrc = video.attr('src');
+			playBtn.off('click');
+			playBtn.on('click', function() {
+				poster.addClass('poster-hide').fadeOut(400);
+				video.attr('src', videoSrc + '?&autoplay=1');
+			});
 		});
-	});
+	};
 
 	$('.testimonial').each(function(i) {
 		let ths = $(this),
@@ -305,7 +311,8 @@ $(function() {
 	testimonialsSlider.owlCarousel({
 		items: 1,
 		nav: true,
-		dots: false
+		dots: false,
+		margin: 10
 	});
 
 	$('.testimonial').each(function(i) {
@@ -314,6 +321,8 @@ $(function() {
 			testimonialsSlider.trigger('to.owl.carousel', i);
 		});
 	});
+
+	testimonialsSlider.on('translate.owl.carousel', checkVideoProportions);
 
 	$('.rate-item').each(function(i) {
 		let ths = $(this),
@@ -331,7 +340,7 @@ $(function() {
 
 	$('.rates-header').on('click', '.rates-header-item', function() {
 		let ths = $(this),
-				index = ths.index(),
+				index = $(window).width() > 768 ? ths.index() : ths.parent().index(),
 				item = $('.rate-item').eq(index);
 		if ( item.is(':hidden') ) {
 			$('.rates-header-item').removeClass('active');
@@ -342,6 +351,87 @@ $(function() {
 				item.addClass('active')
 			}, 50)
 		}
+	});
+
+	function checkInputValue(input) {
+		if ( input.val().trim().length > 0 ) {
+			input.addClass('has-text')
+		}
+		else {
+			input.removeClass('has-text')
+		}
+	}
+
+	$('.form-control').each(function() {
+		checkInputValue($(this))
+	});
+
+	$('.form-control').on('input', function() {
+		checkInputValue($(this))
+	});
+
+	function checkVideoProportions() {
+		$('.video-block, .video-popup-block').each(function() {
+			let videoFrame = $(this).find('iframe'),
+					width = $(this).outerWidth();
+			videoFrame.css('height', `${width * 9 / 16}px`)
+		});
+	}checkVideoProportions();
+	
+	let rateSlider = $('.rates-header');
+
+	function initRateSlider() {
+		if ( $(window).width() > 768 ) {
+			rateSlider.removeClass('owl-carousel').trigger('destroy.owl.carousel');
+			$('.rate-item').eq($('.rates-header-item.active').index());
+		}
+		else {
+			rateSlider
+			.addClass('owl-carousel')
+			.owlCarousel({
+				items: 1,
+				center: true,
+				nav: false,
+				dots: false,
+				margin: 20
+			})
+			.trigger('to.owl.carousel', 1);
+			$('.rate-item').eq($('.rates-header-item.active').parent().index());
+		}
+	}initRateSlider();
+
+	rateSlider.on('translated.owl.carousel', function(e) {
+		item = $('.rate-item').eq(e.item.index);
+		$('.rates-header-item').removeClass('active');
+		$('.rates-header-item').parent().eq(e.item.index).find('.rates-header-item').addClass('active');
+		$('.rate-item').hide().removeClass('active');
+		item.show();
+		setTimeout(() => {
+			item.addClass('active')
+		}, 50)
+	});
+
+	let testimonialSlider = $('.testimonials .row');
+
+	function initTestimonialSlider() {
+		if ( $(window).width() <= 576 ) {
+			testimonialSlider.addClass('owl-carousel').owlCarousel({
+				items: 1,
+				margin: 10,
+				nav: false,
+				dots: false
+			});
+			checkVideoBlock();
+		}
+		else {
+			testimonialSlider.trigger('destroy.owl.carousel');
+			checkVideoBlock();
+		}
+	}initTestimonialSlider();
+
+	$('.phone-mask').inputmask({
+		mask: "+7 999 999-99-99",
+		showMaskOnHover: false
 	});
 
 	$(document).on('click', function(e) {
@@ -362,6 +452,9 @@ $(function() {
 		if ( !$('body').hasClass('is-admin') ) {
 			initMainSlider()
 		}
+		checkVideoProportions();
+		initRateSlider();
+		initTestimonialSlider();
 	});
 
 	$(window).on('load', function() {

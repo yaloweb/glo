@@ -56,6 +56,21 @@
 			height: 600px
 	.not-found-wrapper
 		padding-top: 180px
+	.page-header
+		padding-top: 30px
+		padding-bottom: 50px
+	.course-main-content
+		margin-top: 30px
+	.course-main-left
+		padding-top: 10px
+	.popup-block-course
+		padding: 40px 30px
+	.buy-course .h3
+		margin-bottom: 20px
+	.buy-course-price
+		margin-bottom: 20px
+	.buy-course-form-title
+		margin-bottom: 20px
 @media (max-width: 1399.98px)
 	.header
 		padding-top: 25px
@@ -137,6 +152,18 @@
 			font-size: 16px
 			strong
 				margin-bottom: 10px
+	.module-title
+		margin-right: 30px
+		.h3
+			font-size: 24px
+			margin-top: 10px
+	.module-body
+		.text-block
+			margin-top: 16px
+	.rate-content
+		width: 75%
+	.callback-form-block
+		padding-right: 0
 // ≥1200px
 +media-breakpoint-down(lg)
 	h1, .h1
@@ -264,6 +291,10 @@
 	.header-light
 		.header-open-menu
 			background-image: url(../img/menu-white.svg)
+	.course-main-right img
+		width: 240px
+	.rates-block
+		padding: 30px
 // ≥992px
 +media-breakpoint-down(md)
 	body
@@ -455,6 +486,49 @@
 			background-size: 20px
 	.not-found-wrapper
 		margin-top: -102px
+	.course-main-right
+		img
+			width: 150px
+	.module
+		display: block
+	.module-title
+		margin-right: 0
+		margin-bottom: 30px
+		span
+			margin-left: 0
+			width: 46px
+			height: 46px
+			line-height: 46px
+			font-size: 18px
+			margin-right: 10px
+			&:after
+				display: none
+	.module-body
+		max-width: none
+	.rates-header-item
+		width: calc(33.3333% - 10px)
+	.rate-header-title
+		font-size: 16px
+	.rate-item-row
+		display: block
+	.rate-title
+		padding-right: 0
+		margin-bottom: 20px
+	.rate-content
+		width: 100%
+	.rate-buy .btn
+		padding: 0 35px
+	.rate-total-left
+		margin-right: 20px
+	.callback-form-block
+		margin-bottom: 30px
+	.recl-block
+		padding: 12px
+		border-radius: 10px
+		img
+			border-radius: 6px
+	.s-recl
+		padding-top: 70px
 // ≥768px
 +media-breakpoint-down(sm)
 	.main-slider-wrapper
@@ -528,6 +602,47 @@
 		margin-left: -35px
 		background-size: 20px
 		background-position: top 50% left calc(50% + 2px)
+	.course-main-content
+		padding-left: 0
+		border-left: none
+	.course-main-left
+		padding-right: 20px
+	.video-play-btn:before
+		width: 70px
+		height: 70px
+		background-size: 20px
+	.s-modules
+		padding-bottom: 55px
+	.testimonials-slider
+		.owl-item
+			padding: 0
+		.owl-nav
+			button
+				&.owl-prev
+					left: -22px
+				&.owl-next
+					right: -22px
+	.testimonials-slider-video .video-play-btn
+		font-size: 0
+		&:before
+			margin: 0
+		span
+			display: none
+	.rates-block
+		margin: 0 -30px
+		border-radius: 0
+	.rates-header
+		padding-left: 47px
+		padding-right: 47px
+		.owl-stage-outer
+			overflow: visible
+	.rates-header-item
+		width: 100%
+	.rate-total
+		flex-wrap: wrap
+	.rate-total-left
+		width: 100%
+		margin: 0 0 30px
 // ≥576px
 +media-breakpoint-down(xs)
 	body
@@ -941,6 +1056,145 @@
 		right: 10px
 	.popup-block
 		max-width: calc(100% - 80px)
+	.course-main-content
+		flex-direction: column-reverse
+	.course-main-left
+		padding-top: 30px
+		padding-right: 0
+		p
+			margin-bottom: 30px
+	.course-main-footer
+		display: block
+	.course-main-date
+		margin-top: 20px
+	.video-block
+		margin-bottom: 40px
+		.video-poster
+			display: flex
+			align-items: center
+			justify-content: center
+		.video-play-btn
+			margin: 0
+			position: static
+			&:before
+				margin: 0
+			span
+				display: none
+	.rating-block
+		padding: 20px
+		display: block
+	.rating-right
+		margin-top: 10px
+		text-align: right
+	.text-block p
+		margin-bottom: 20px
+	.text-content
+		margin-bottom: 40px
+	.format-item
+		margin-bottom: 40px
+	.testimonial-content
+		padding: 20px 15px 40px
+		margin-bottom: 0
+		border-radius: 20px
+	.testimonials
+		padding-right: 15px
+		.owl-stage-outer
+			overflow: visible
+		[class*=col-]
+			display: block !important
+	.testimonial
+		margin-bottom: 0
+	.testimonial-read-more
+		margin-top: 15px
+	.testimonial-user
+		padding-right: 10px
+		margin-top: -15px
+		position: relative
+		padding-left: 75px
+		img
+			width: 50px !important
+			height: 50px
+			position: absolute
+			left: 15px
+			top: 0
+	.testimonial-name
+		font-size: 16px
+		margin-bottom: 0
+	.testimonial-date
+		font-size: 12px
+	.testimonials-open-more
+		display: none
+	.s-testimonials
+		padding-bottom: 55px
+	.testimonials-slider-img img
+		border-radius: 20px
+	.rates-header-item
+		border-radius: 14px
+	.rates-header-item
+		text-align: left
+	.rate-header-title
+		font-size: 18px
+	.rate-header-descr
+		font-size: 12px
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+	.rate-header-price
+		font-size: 12px
+	.rates-header
+		margin-bottom: 34px
+	.rate-title .h3
+		margin-bottom: 4px
+	.check-list
+		ul
+			margin-bottom: 15px
+			li
+				padding-left: 25px
+				font-size: 12px
+				&:before
+					width: 24px
+					height: 24px
+					top: 0
+	.rate-total
+		padding-top: 15px
+	.current-price
+		font-size: 24px
+		margin-right: 22px
+	.old-price
+		font-size: 14px
+	.rate-price-info
+		font-size: 12px
+	.rate-buy
+		display: block
+		padding: 0 30px
+		text-align: center
+		.btn
+			width: 100%
+			margin-bottom: 15px
+	.s-prices
+		padding-bottom: 0
+	.s-callback .section-title
+		margin-bottom: 20px
+	.form-submit
+		display: block
+		.btn
+			width: calc(100% - 60px)
+			margin-left: 30px
+	.checkbox-label
+		margin-right: 0
+		margin-bottom: 20px
+	.callback-soc p
+		margin-bottom: 15px
+	.rates-block
+		margin: 0 -24px
+	.popup-block-course
+		max-width: 100%
+		border-radius: 0
+		z-index: 10
+		.popup-close
+			display: block
+			background-image: url(../img/close-black-big.svg)
+			z-index: 10
 @media (max-width: 359.98px)
 	.soc-network-acc .h4
 		font-size: 18px
