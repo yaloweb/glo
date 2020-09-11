@@ -1676,6 +1676,7 @@ section
 		right: 0
 		z-index: 1
 		background: linear-gradient(275.31deg, rgba(255, 255, 255, 0.92) 18.59%, rgba(255, 255, 255, 0) 90.84%)
+
 .table
 	overflow-x: auto
 	position: relative
@@ -2921,5 +2922,26 @@ section
 
 .s-title_block
 	padding-bottom: 0 !important
+
+.table-row
+	display: flex
+
+.table-col
+	flex-grow: 1
+	min-width: 230px
+
+.table-th,
+.table-td
+	padding: 24px 30px 24px 0
+	border-bottom: 1px solid rgba($blue, .4)
+	&:last-child
+		border-bottom: none
+
+.table-th
+	color: #293F6E
+	font-size: 14px
+	font-weight: normal
+
+
 
 @import "media" // Always at the end

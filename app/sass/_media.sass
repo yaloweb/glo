@@ -694,6 +694,8 @@
 		table
 			td, th
 				min-width: 180px
+	.table-col
+		min-width: 180px
 // ≥576px
 +media-breakpoint-down(xs)
 	body
@@ -1105,6 +1107,10 @@
 	.text-content table th, .text-content table td
 		padding-right: 10px
 		font-size: 12px
+	.table-th,
+	.table-td
+		font-size: 12px
+		padding-right: 10px
 	.articles-slider
 		.owl-stage-outer
 			overflow: visible
@@ -1260,6 +1266,8 @@
 		table
 			td, th
 				min-width: 140px
+	.table-col
+		min-width: 140px
 	.table-wrapper:after
 		width: 38px
 	.text-content-footer
@@ -1320,6 +1328,10 @@
 		.h5
 			font-size: 14px
 	.text-content table th, .text-content table td
+		padding-top: 12px
+		padding-bottom: 12px
+	.table-td,
+	.table-th
 		padding-top: 12px
 		padding-bottom: 12px
 	.not-found-wrapper
