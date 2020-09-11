@@ -13,6 +13,9 @@
 	.article-page
 		.text-content
 			padding-right: 20px
+	.not-found-content
+		img
+			width: 350px
 @media (max-width: 1599.98px)
 	h2, .h2
 		font-size: 50px
@@ -473,8 +476,40 @@
 	.step
 		margin: 80px 0
 		padding-left: 60px
+	.article-page
+		transform: none !important
+		opacity: 1 !important
 	.content
-		display: none
+		position: fixed
+		z-index: 10
+		bottom: 0
+		left: 0
+		width: 100%
+		border-radius: 20px 20px 0 0
+		background-color: $blue
+		padding: 40px 24px 22px
+		color: #fff
+		top: auto
+		transition: transform .4s ease
+		transition: $time
+		transform: translateY(100%)
+		&.opened
+			transform: translateY(0)
+		.h4
+			margin-bottom: 24px
+	.content-nav
+		padding-right: 69px
+		a
+			font-size: 12px
+			color: rgba(#fff, .6) !important
+			padding: 0 !important
+			margin-bottom: 18px
+			&.active
+				color: #fff !important
+			&:before
+				display: none
+	.close-content-list-btn
+		display: block
 	.video-popup-iframe iframe
 		height: 400px
 	.video-popup-play-btn
@@ -529,6 +564,8 @@
 			border-radius: 6px
 	.s-recl
 		padding-top: 70px
+	.open-content-list-btn
+		display: block
 // ≥768px
 +media-breakpoint-down(sm)
 	.main-slider-wrapper
@@ -643,6 +680,10 @@
 	.rate-total-left
 		width: 100%
 		margin: 0 0 30px
+	.table
+		table
+			td, th
+				min-width: 180px
 // ≥576px
 +media-breakpoint-down(xs)
 	body
@@ -968,6 +1009,9 @@
 		padding: 20px
 		&:after
 			background: linear-gradient(180deg, rgba(46, 169, 201, 0) 17.1%, rgba(46, 169, 201, 0.94) 79.14%)
+		&.article-slide-white
+			&:after
+				background: linear-gradient(180deg, rgba(255, 255, 255, 0) 17.1%, rgba(248, 248, 248, 0.94) 79.14%)
 	.article-img
 		top: 0
 		left: 0
@@ -992,8 +1036,9 @@
 	.articles-list
 		margin-top: 30px
 	.pagination-arrow
-		width: 34px
-		height: 34px
+		width: 40px
+		height: 40px
+		background-size: 15px
 	.pagination-list a
 		width: 34px
 		height: 34px
@@ -1002,7 +1047,12 @@
 	.text-content
 		blockquote
 			font-size: 14px
-			padding: 20px
+			padding: 25px
+			strong
+				font-size: 24px
+		h3, .h3
+			font-size: 34px
+			margin-bottom: 1.4rem
 	.step-number
 		width: 36px
 		height: 36px
@@ -1015,7 +1065,7 @@
 	.step
 		padding-left: 30px
 	.text-block
-		padding: 20px
+		padding: 25px
 		background-size: 150px
 		background-position: top -50px right -50px
 	.articles-slider .owl-nav button.owl-next
@@ -1025,7 +1075,8 @@
 		font-size: 12px
 		span
 			font-size: 14px
-			margin-left: 5px
+			display: block
+			margin-left: 0
 	.share-link > a
 		&:after
 			width: 16px
@@ -1195,6 +1246,78 @@
 			display: block
 			background-image: url(../img/close-black-big.svg)
 			z-index: 10
+	.table
+		table
+			td, th
+				min-width: 140px
+	.table-wrapper:after
+		width: 38px
+	.text-content-footer
+		span
+			display: block
+	.big-text
+		font-size: 14px
+		font-weight: normal
+	.article-page
+		overflow: hidden
+	.photo-gallery
+		overflow: visible
+		.fotorama__stage
+			overflow: visible
+		.fotorama__arr
+			display: none !important
+		img
+			border-radius: 20px !important
+	.s-recl
+		padding-top: 30px
+	.text-content
+		.h4, h4
+			font-size: 24px
+		ol
+			li
+				padding-left: 26px
+				&:before
+					font-size: 18px
+					top: -2px
+	.text-content
+		ul
+			li
+				padding-left: 14px
+				margin-bottom: 10px
+				&:after
+					top: 8px
+	.step
+		margin: 50px 0
+		position: relative
+		padding-left: 0
+	.step-content
+		h4
+			padding-left: 68px
+	.step-number
+		position: absolute
+		width: 52px
+		height: 52px
+		line-height: 52px
+		text-align: center
+		font-size: 24px
+		left: 0
+		top: -13px
+	.advantage
+		padding-left: 28px
+		&:before
+			width: 28px
+			height: 28px
+		.h5
+			font-size: 14px
+	.text-content table th, .text-content table td
+		padding-top: 12px
+		padding-bottom: 12px
+	.not-found-wrapper
+		padding-top: 120px
+	.pagination-items
+		display: block
+	.pagination-list
+		display: none
 @media (max-width: 359.98px)
 	.soc-network-acc .h4
 		font-size: 18px

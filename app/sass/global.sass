@@ -1309,7 +1309,14 @@ section
 	.article-views
 		&:after
 			background-image: url(../img/eye-white.svg)
-
+	&.article-slide-white
+		.article-slide-body
+			color: $text
+		&:after
+			background: linear-gradient(90deg, #F8F8F8 51.51%, rgba(255, 255, 255, 0) 82.84%)
+		.article-views:after
+			background-image: url(../img/eye.svg)
+			
 .article-slide-link
 	position: absolute
 	top: 0
@@ -1647,10 +1654,22 @@ section
 .text-block-type-2
 	background-image: url(../img/text-block-bg-2.svg)
 
+.table-wrapper
+	position: relative
+	margin-bottom: 2.22rem
+	&:after
+		content: ''
+		position: absolute
+		width: 158px
+		top: 0
+		bottom: 4px
+		right: 0
+		z-index: 1
+		background: linear-gradient(275.31deg, rgba(255, 255, 255, 0.92) 18.59%, rgba(255, 255, 255, 0) 90.84%)
 .table
 	overflow-x: auto
 	position: relative
-	&::webkit-scrollbar
+	&::-webkit-scrollbar
 		width: 4px
 		height: 4px
 		background-color: #E3F6FF
@@ -1661,10 +1680,12 @@ section
 	&::-webkit-scrollbar-thumb
 		background-color: rgba(#008BCA, .5)
 		border-radius: 10px
-	&::webkit-scrollbar-button
+	&::-webkit-scrollbar-button
 		display: none
 	table
-		// min-width: 1119px
+		margin: 0
+		td, th
+			min-width: 230px
 
 .advantage
 	padding-left: 36px
@@ -2064,7 +2085,6 @@ section
 		margin-bottom: 50px
 		max-width: 100%
 	.h3
-		color: #E3F6FF
 		margin-bottom: 30px
 	p
 		margin-bottom: 80px
@@ -2833,5 +2853,60 @@ section
 		min-height: 125px
 		object-fit: cover
 		margin: 0 !important
+
+.open-content-list-btn
+	position: fixed
+	right: 24px
+	bottom: 38px
+	width: 54px
+	z-index: 5
+	height: 54px
+	border-radius: 50%
+	background-color: $blue
+	background-image: url(../img/ellipsis.svg)
+	background-size: 36px
+	background-repeat: no-repeat
+	background-position: center
+	display: none
+	cursor: pointer
+
+.close-content-list-btn
+	position: absolute
+	bottom: 38px
+	right: 24px
+	width: 54px
+	height: 54px
+	z-index: 1
+	border-radius: 50%
+	background-color: #fff
+	background-image: url(../img/close-blue.svg)
+	background-size: 30px
+	background-repeat: no-repeat
+	background-position: center
+	display: none
+	cursor: pointer
+
+.fotorama__dot
+	width: 5px !important
+	height: 5px !important
+	border: none
+	background: #E3F6FF
+	border-radius: 50% !important
+	transition: $time
+
+.fotorama__nav__frame
+	width: 15px
+	&.fotorama__active .fotorama__dot
+		width: 5px
+		height: 5px
+		background-color: $blue
+
+.pagination-items
+	text-align: center
+	font-family: $font2
+	font-size: 16px
+	color: #000
+	display: none
+	flex-grow: 1
 
 @import "media" // Always at the end

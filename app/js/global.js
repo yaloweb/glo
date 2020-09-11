@@ -111,18 +111,28 @@ $(function() {
 			}
 		});
 
-		$('.photo-gallery').fotorama({
-			nav: 'thumbs',
-			thumbmargin: 30,
-			thumbwidth: 52,
-			thumbheight: 52
-		});
-
+		initFotorama();
 	}
 	else {
 		$('.course-slider').removeClass('owl-carousel');
 		$('.articles-slider').removeClass('owl-carousel');
 	}
+
+	function initFotorama() {
+		if ( $(window).width() < 576 ) {
+			$('.photo-gallery').fotorama({
+				margin: 12
+			});
+		}
+		else {
+			$('.photo-gallery').fotorama({
+				nav: 'thumbs',
+				thumbmargin: 30,
+				thumbwidth: 52,
+				thumbheight: 52
+			});
+		}
+	}initFotorama();
 
 	$('.skill-tabs-body-item').each(function(i) {
 		let ths = $(this),
@@ -230,7 +240,8 @@ $(function() {
 		ths.addClass('active')
 		$('html, body').animate({
 			scrollTop: $(id).offset().top
-		}, 1000)
+		}, 1000);
+		closeContent();
 	});
 
 	$('.share-link > a').on('click', function(e) {
@@ -432,6 +443,16 @@ $(function() {
 	$('.phone-mask').inputmask({
 		mask: "+7 999 999-99-99",
 		showMaskOnHover: false
+	});
+
+	$('.close-content-list-btn').on('click', closeContent);
+
+	function closeContent() {
+		$('.content').removeClass('opened')
+	}
+
+	$('.open-content-list-btn').on('click', function() {
+		$('.content').addClass('opened')
 	});
 
 	$(document).on('click', function(e) {
