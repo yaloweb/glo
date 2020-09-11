@@ -152,6 +152,12 @@ section
 			left: 0
 			background-color: rgba(#008bca, .6)
 
+.header-menu__item,
+.footer-menu__item
+	margin-right: 43px
+	&:last-child
+		margin-right: 0
+
 .header-callback
 	.btn
 		padding: 0 24px
@@ -441,7 +447,7 @@ section
 	font-size: 20px
 	font-weight: 600
 	margin-bottom: 10px
-	span
+	.numbers-num
 		font-family: $font2
 		margin-right: 10px
 		font-size: 50px
@@ -766,11 +772,13 @@ section
 	margin-bottom: 43px
 	&:last-child
 		margin-bottom: 0
-	&:nth-child(even)
+	// &:nth-child(even),
+	&[data-block-reverse='["Y"]']
 		> .row
 			.fact-text
 				padding-left: 90px
-	&:nth-child(odd)
+	// &:nth-child(odd)
+	&[data-block-reverse='["N"]']
 		> .row
 			flex-direction: row-reverse
 		.fact-text
@@ -787,6 +795,7 @@ section
 		margin: 0 !important
 
 .fact-text
+	margin-bottom: 60px
 	.h3
 		margin-bottom: 50px
 		max-width: 704px
@@ -796,7 +805,7 @@ section
 		max-width: 612px
 
 .s-skills
-	padding-top: 55px
+	padding: 0
 	.section-title
 		max-width: 1060px
 
@@ -814,7 +823,6 @@ section
 		height: 100%
 		z-index: 0
 		background: linear-gradient(360deg, rgba(41, 63, 110, 0) 42.59%, rgba(41, 63, 110, 0.65) 93.87%)
-
 
 .skill-tabs-nav
 	position: absolute
@@ -1054,7 +1062,9 @@ section
 	.container
 		position: relative
 		z-index: 1
-
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6
+		color: #fff
 .s-subscribe
 	padding-bottom: 0
 	overflow: hidden
@@ -2908,5 +2918,8 @@ section
 	color: #000
 	display: none
 	flex-grow: 1
+
+.s-title_block
+	padding-bottom: 0 !important
 
 @import "media" // Always at the end
