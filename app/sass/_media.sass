@@ -118,6 +118,8 @@
 			margin-bottom: 22px
 	.form-submit-flex
 		margin-top: 30px
+	.testimonial-content-descr
+		font-size: 21px
 @media (max-width: 1399.98px)
 	.header
 		padding-top: 25px
@@ -762,7 +764,13 @@
 	.buy-course-left
 		display: none
 	.buy-course-right
-		width: 100%
+		width: 100
+	.testimonials-for-popup-custom
+		display: block
+		.testimonial-user
+			width: 100%
+			margin-bottom: 20px
+			position: static
 // ≥576px
 +media-breakpoint-down(xs)
 	body
@@ -1455,7 +1463,16 @@
 		.popup-close
 			display: block
 			background-image: url(../img/close-black-big.svg)
-
+	.testimonial-content-descr
+		font-size: 18px
+	.testimonials-for-popup-custom
+		.testimonial-user
+			img
+				position: static
+	.testimonials-popup-item
+		padding: 30px 20px
+	.default-video-block
+		margin: -30px -20px !important
 @media (max-width: 359.98px)
 	.soc-network-acc .h4
 		font-size: 18px

@@ -7806,7 +7806,7 @@ textarea.form-control {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0;
+  margin: 0 !important;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -7969,6 +7969,9 @@ textarea.form-control {
   }
   .form-submit-flex {
     margin-top: 30px;
+  }
+  .testimonial-content-descr {
+    font-size: 21px;
   }
 }
 
@@ -8933,7 +8936,15 @@ textarea.form-control {
     display: none;
   }
   .buy-course-right {
+    width: 100;
+  }
+  .testimonials-for-popup-custom {
+    display: block;
+  }
+  .testimonials-for-popup-custom .testimonial-user {
     width: 100%;
+    margin-bottom: 20px;
+    position: static;
   }
 }
 
@@ -9882,6 +9893,18 @@ textarea.form-control {
   .popup-block-buy-course .popup-close {
     display: block;
     background-image: url(../img/close-black-big.svg);
+  }
+  .testimonial-content-descr {
+    font-size: 18px;
+  }
+  .testimonials-for-popup-custom .testimonial-user img {
+    position: static;
+  }
+  .testimonials-popup-item {
+    padding: 30px 20px;
+  }
+  .default-video-block {
+    margin: -30px -20px !important;
   }
 }
 
