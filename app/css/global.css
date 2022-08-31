@@ -4083,6 +4083,10 @@ section {
   padding-right: 0;
 }
 
+.fact.full-width .fact-text p {
+  max-width: 720px;
+}
+
 .fact-img {
   margin-bottom: 60px;
 }
@@ -7816,6 +7820,226 @@ textarea.form-control {
   margin: 0 0 10px;
 }
 
+.all-articles-btn {
+  display: inline-block;
+  position: relative;
+  padding-right: 36px;
+  color: #293F6E !important;
+  text-decoration: none !important;
+}
+
+.all-articles-btn:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/bi_arrow-right.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.color-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 30px;
+  background-color: #E3F6FF;
+  padding: 79px 50px 38px;
+  margin-bottom: 50px;
+}
+
+.color-block.blue {
+  background-color: #E3F6FF;
+}
+
+.color-block.red {
+  background-color: #FFF2F3;
+}
+
+.color-block.gray {
+  background-color: #F1F4FB;
+}
+
+.color-block-left {
+  width: 40%;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  padding-right: 56px;
+}
+
+.color-block-left img {
+  max-width: 100%;
+}
+
+.color-block-right {
+  width: 60%;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.color-block-right > *:last-child {
+  margin-bottom: 0;
+}
+
+.color-block-right p i {
+  font-size: 24px;
+  font-style: normal;
+}
+
+.color-block-right ul,
+.color-block-right ol {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+
+.color-block-right li {
+  padding-right: 40px;
+}
+
+.color-block-right ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.color-block-right ul li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.color-block-right ul li:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 6px;
+  width: 6px;
+  background-color: #008BCA;
+  border-radius: 50%;
+}
+
+.color-block-right ol {
+  counter-reset: olCounter2;
+  list-style-type: none;
+  padding: 0;
+}
+
+.color-block-right ol li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+}
+
+.color-block-right ol li:last-child {
+  margin-bottom: 0;
+}
+
+.color-block-right ol li:before {
+  content: counter(olCounter2) ".";
+  counter-increment: olCounter2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Zona Pro", sans-serif;
+  color: #008BCA;
+}
+
+.fact-right {
+  padding-left: 22px;
+  position: relative;
+  font-size: 16px;
+  color: #008BCA;
+}
+
+.fact-right:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  border-radius: 1px;
+  background-color: #008BCA;
+}
+
+.fact-right img {
+  width: 40px;
+  margin-bottom: 16px;
+}
+
+.fact-right *:last-child {
+  margin-bottom: 0;
+}
+
+.s-main-info {
+  padding-top: 32px;
+  padding-bottom: 30px;
+}
+
+.main-info-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 70px;
+}
+
+.main-info-header h1 {
+  width: 46%;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  padding-right: 98px;
+  margin-bottom: 0;
+  font-size: 58px;
+}
+
+.main-info-header p {
+  max-width: 434px;
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 15px 0 0;
+}
+
+.main-video {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-video img {
+  width: 100%;
+}
+
+.main-video video {
+  width: 100%;
+  max-height: 465px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none !important;
+}
+
+.main-video-mob-img {
+  display: none;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1799.98px) {
   .main-window-left-content .h1 {
@@ -7937,6 +8161,10 @@ textarea.form-control {
     height: 38px;
     margin-right: 10px;
     background-size: 17px;
+  }
+  .color-block {
+    padding: 50px;
+    margin-bottom: 30px;
   }
 }
 
@@ -8095,6 +8323,12 @@ textarea.form-control {
   }
   .callback-form-block {
     padding-right: 0;
+  }
+  .main-info-header h1 {
+    font-size: 40px;
+  }
+  .main-info-header p {
+    margin-top: 5px;
   }
 }
 
@@ -8294,6 +8528,9 @@ textarea.form-control {
   .form-submit-flex .checkbox-label {
     width: 100%;
     margin: 0 0 15px;
+  }
+  .color-block-right p i {
+    font-size: 21px;
   }
 }
 
@@ -8741,6 +8978,44 @@ textarea.form-control {
   .sidebar-av {
     display: none;
   }
+  .color-block {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .color-block-left {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  .color-block-left img {
+    width: 200px;
+  }
+  .color-block-right {
+    width: 100%;
+  }
+  .color-block-right ul li {
+    padding-right: 10px;
+  }
+  .fact-right {
+    margin: 10px 0 30px;
+    font-size: 14px;
+  }
+  .main-info-header {
+    margin-bottom: 35px;
+  }
+  .main-info-header h1 {
+    width: 52%;
+    padding-right: 30px;
+  }
+  .main-info-header p {
+    font-size: 14px;
+    margin-top: 9px;
+  }
+  .main-video img {
+    height: 250px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -8945,6 +9220,26 @@ textarea.form-control {
     width: 100%;
     margin-bottom: 20px;
     position: static;
+  }
+  .main-info-header {
+    display: block;
+  }
+  .main-info-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding-right: 0;
+  }
+  .main-info-header p {
+    width: 100%;
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+  .main-video video {
+    display: none;
+  }
+  .main-video-mob-img {
+    display: block;
   }
 }
 
@@ -9905,6 +10200,19 @@ textarea.form-control {
   }
   .default-video-block {
     margin: -30px -20px !important;
+  }
+  .color-block {
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+  .color-block-right ul,
+  .color-block-right ol {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+  .color-block-right ul li, .color-block-right ol li {
+    padding-right: 0;
   }
 }
 

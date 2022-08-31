@@ -230,7 +230,8 @@ $(function() {
 			if ( `#${$(this).attr('id')}` !== id ) {
 				$(this).removeClass('opened');
 				setTimeout(() => {
-					$(this).hide()
+					$(this).hide();
+					closeBtnPosition();
 				}, 400)
 			}
 		});
@@ -238,10 +239,12 @@ $(function() {
 		setTimeout(() => {
 			$(id).addClass('opened');
 			checkVideoProportions();
-		}, 50)
+		}, 50);
 		setTimeout(() => {
 			checkVideoProportions();
-		}, 150)
+			closeBtnPosition();
+		}, 150);
+		closeBtnPosition();
 	}
 
 	function closePopup() {
@@ -482,7 +485,16 @@ $(function() {
 		video.attr('src', videoSrc + '?&autoplay=1');
 	});
 
-	$('.default-video-block')
+	function closeBtnPosition() {
+		$('.popup-wrapper').each(function() {
+			let ths = $(this),
+					bl = ths.find('.popup-block'),
+					btn = ths.find('.popup-close');
+			if ( $(window).width() < 576 && bl.position().top > 90 ) {
+				btn.css('top', `${bl.position().top - 70}px`);
+			}
+		});
+	}closeBtnPosition();
 
 	$(document).on('click', function(e) {
 		if ( !$(e.target).closest('.header').length ) {
@@ -506,6 +518,7 @@ $(function() {
 		initRateSlider();
 		initTestimonialSlider();
 		tableEqualHeight();
+		closeBtnPosition();
 	});
 
 	$(window).on('load', function() {

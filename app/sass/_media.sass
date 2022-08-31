@@ -95,6 +95,10 @@
 			height: 38px
 			margin-right: 10px
 			background-size: 17px
+	.color-block
+		padding: 50px
+		margin-bottom: 30px
+
 @media (max-width: 1439.98px)
 	.buy-course-right
 		padding: 35px 30px
@@ -213,6 +217,12 @@
 		width: 75%
 	.callback-form-block
 		padding-right: 0
+	.main-info-header
+		h1
+			font-size: 40px
+		p
+			margin-top: 5px
+
 // ≥1200px
 +media-breakpoint-down(lg)
 	h1, .h1
@@ -355,6 +365,9 @@
 		.checkbox-label
 			width: 100%
 			margin: 0 0 15px
+	.color-block-right p i
+		font-size: 21px
+
 // ≥992px
 +media-breakpoint-down(md)
 	body
@@ -635,6 +648,36 @@
 		position: static
 	.sidebar-av
 		display: none
+	.color-block
+		display: block
+		margin-bottom: 20px
+	.color-block-left
+		width: 100%
+		padding-right: 0
+		margin-bottom: 30px
+		img
+			width: 200px
+	.color-block-right
+		width: 100%
+	.color-block-right ul li
+		padding-right: 10px
+	.fact-right
+		margin: 10px 0 30px
+		font-size: 14px
+	.main-info-header
+		margin-bottom: 35px
+		h1
+			width: 52%
+			padding-right: 30px
+		p
+			font-size: 14px
+			margin-top: 9px
+	.main-video
+		img
+			height: 250px
+			object-fit: cover
+
+
 // ≥768px
 +media-breakpoint-down(sm)
 	.main-slider-wrapper
@@ -771,6 +814,23 @@
 			width: 100%
 			margin-bottom: 20px
 			position: static
+	.main-info-header
+		display: block
+		h1
+			font-size: 36px
+			margin-bottom: 15px
+			width: 100%
+			padding-right: 0
+		p
+			width: 100%
+			margin-bottom: 0
+			max-width: 100%
+	.main-video
+		video
+			display: none
+	.main-video-mob-img
+		display: block
+
 // ≥576px
 +media-breakpoint-down(xs)
 	body
@@ -1473,6 +1533,15 @@
 		padding: 30px 20px
 	.default-video-block
 		margin: -30px -20px !important
+	.color-block
+		padding: 30px 20px
+		border-radius: 10px
+	.color-block-right ul, .color-block-right ol
+		column-count: 1
+		li
+			padding-right: 0
+
+
 @media (max-width: 359.98px)
 	.soc-network-acc .h4
 		font-size: 18px
